@@ -1,0 +1,11 @@
+# The following steps have to be carried in the main codeletter folder. Not the nested one. the one outside.
+# pip install virtualenv
+# virtualenv venv -- creates a virtualenv named venv
+# venv/scripts/activate -- activates virtualenv
+# pip install Django -- in the virtualenv
+# python manage.py makemigrations 
+# python manage.py migrate
+# python manage.py createsuperuser
+# enter login credentials which u want to use
+# python manage.py runserver -- click on the localhost link and append /admin to the url and enter those login credentials.
+Django
