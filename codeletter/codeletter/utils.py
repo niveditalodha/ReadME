@@ -8,8 +8,11 @@ def get_sent_articles(username):
     json_data = []
     if len(objs) == 0:
         return json_data
-    for i in range(10):
-        concept_id = objs[i].concept_ids
+    for article in range(10):
+        concept_ids = objs[article].concept_ids
+        concept_ids = list(concept_ids.split(","))
+        for concept_no in range(concept_ids):
+            pass
         
 
     
