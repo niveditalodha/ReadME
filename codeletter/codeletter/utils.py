@@ -1,9 +1,9 @@
 def get_scraped_content():
     pass
 
-def get_sent_articles(username):
+def get_sent_articles(user_id):
     from codeletter.models import SentArticle, Concept, Article
-    objs = SentArticle.objects.filter(username=username).order_by('-sent_date')
+    objs = SentArticle.objects.filter(user_id=user_id).order_by('-sent_date')
     json_data = []
     if len(objs) == 0:
         return json_data
@@ -56,5 +56,6 @@ def get_random_articles():
     return json_data
 
 
-def update_read_flag(username, concept):
+def update_read_flag(username, sent_article_id):
+    from codeletter.models import SentArticle, Concept
     pass
