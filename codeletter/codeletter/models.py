@@ -6,7 +6,7 @@ class Concept(models.Model):
     concept_name = models.CharField(max_length=100)
 
 class UserPreference(models.Model):
-    username = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     concept_ids = models.CharField(max_length=100,null=True)
 
 class Article(models.Model):
