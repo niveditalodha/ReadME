@@ -9,3 +9,4 @@
 # enter login credentials which u want to use
 # python manage.py runserver -- click on the localhost link and append /admin to the url and enter those login credentials.
 Django
+django-crontab

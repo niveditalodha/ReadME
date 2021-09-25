@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'codeletter'
+    'codeletter',
+    # 'django-crontab'
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+DJANGO_SETTINGS_MODULE = ''
+
+CRONJOBS = [
+    ('*/15 * * * *', 'codeletter.scripts.collect_articles_daily')
+]
