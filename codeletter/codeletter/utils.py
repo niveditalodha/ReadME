@@ -88,3 +88,62 @@ def update_read_flag(username, sent_article_id):
                         obj.save()
                     json_data.append({"user_id": user_id, "concept_id":j,"user_badge":obj.user_badge})
     return json_data
+
+def get_preferences():
+    from codeletter.models import Concept
+
+    res=[]
+    concepts_list=Concept.objects.all()
+    for concept in concepts_list:
+        json_response_ele={}
+        json_response_ele['id']=concept.concept_id
+        json_response_ele['concept_name']=concept.concept_name
+        res.append(json_response_ele)
+    print(res)
+
+def update_preferences(user_data):
+#user_data={"user_name":1,"preferences":[{"id":"1","concept_name":"asd"},{"id":"2","concept_name":"asda"}]}
+    from codeletter.models import UserPreference,User
+    user_object=User.objects.filter(username=user_data["user_name"])[0]
+    
+    try:
+        user_preference_rec = UserPreference.objects.filter(user_id=user_object.pk)
+    except UserPreference.DoesNotExist:
+        user_preference_rec = None
+
+    preference_list=user_data["preferences"]
+    preference_value_list=[]
+    concept_badge_data=[]
+    for preference in preference_list:
+        preference_id=preference["id"]
+        preference_value_list.append(preference_id)
+
+        concept_badge={}
+        concept_badge["concept_id"]=preference_id
+        concept_badge["user_badge"]=preference["user_badge"]
+        concept_badge_data.append(concept_badge)
+
+    preference_value=','.join(preference_value_list)
+
+    if(user_preference_rec!=None):
+        user_preference_rec.concept_ids=preference_value
+        UserBadge.objects.filter(user_id=user_object.pk).delete()
+    else:
+        user_preference_rec=UserPreference(user_data.pk,preference_value)
+    user_preference_rec.save()
+    for concept_badge in concept_badge_data:
+        concept_badge_rec=UserBadge(user_data.pk,concept_badge["concept_id"],concept_badge["user_badge"])
+        concept_badge_rec.save()
+
+def get_concept_badges(user_name):
+    from codeletter.models import UserBadge,User
+    user_object=User.objects.filter(username=user_name)[0]
+
+    res=[]
+    user_badges_list=UserBadge.objects.filter(user_id=user_object.pk)
+    for user_badge_ele in user_badges_list:
+        json_object={}
+        json_object["concept_id"]=user_badge_ele.concept_id
+        json_object["user_badge"]=user_badge_ele.user_badge
+        res.append(json_object)
+    return res
