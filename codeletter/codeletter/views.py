@@ -97,3 +97,73 @@ def update_read_flag(request):
                         obj.save()
                     json_data.append({"user_id": user_id, "concept_id":j,"user_badge":obj.user_badge})
     return HttpResponse(str(json_data))
+
+def get_concept_badges(user_name):
+    from codeletter.models import UserBadge,User
+    user_object=User.objects.filter(username=user_name)
+    if(user_object):
+        res=[]
+        user_badges_list=UserBadge.objects.filter(user_id=user_object.pk)
+        for user_badge_ele in user_badges_list:
+            json_object={}
+            json_object["concept_id"]=user_badge_ele.concept_id
+            json_object["user_badge"]=user_badge_ele.user_badge
+            res.append(json_object)
+        return HttpResponse(str(res))
+    else:
+        return HttpResponse(str("No user badge details"))
+
+def update_preferences(user_data):
+#user_data={"user_name":1,"preferences":[{"id":"1","concept_name":"asd"},{"id":"2","concept_name":"asda"}]}
+    user_data={"user_name":"nivedita","preferences":[{"id":"2","concept_name":"concept3"}]}
+    from codeletter.models import UserPreference,User,UserBadge, Concept
+    user_object=User.objects.filter(username=user_data["user_name"])[0]
+    
+    try:
+        user_preference_recs = UserPreference.objects.filter(user_id=user_object.pk)
+    except UserPreference.DoesNotExist:
+        user_preference_recs = None
+
+    preference_list=user_data["preferences"]
+    preference_value_list=[]
+    concept_badge_data=[]
+    for preference in preference_list:
+        preference_id=preference["id"]
+        preference_value_list.append(preference_id)
+
+        concept_badge={}
+        concept_badge["concept_id"]=preference_id
+        concept_badge_data.append(concept_badge)
+
+    preference_value=','.join(preference_value_list)
+    print(preference_value)
+    if(user_preference_recs!=None):
+        user_preference_rec=user_preference_recs[0]
+        print(user_preference_rec.concept_ids)
+
+        user_preference_rec.concept_ids=preference_value
+        user_badge_rec=UserBadge.objects.filter(user_id=user_object.pk)
+        if(user_badge_rec):
+            UserBadge.objects.filter(user_id=user_object.pk).delete()
+    else:
+        user_preference_rec=UserPreference(user_data.pk,preference_value)
+        print(user_preference_rec.pk)
+    user_preference_rec.save()
+    for concept_badge in concept_badge_data:
+        print(concept_badge["concept_id"])
+        concept_rec=Concept.objects.get(concept_id=concept_badge["concept_id"])
+        concept_badge_rec=UserBadge(user_id=user_object,concept_id=concept_rec)
+        concept_badge_rec.save()
+    return HttpResponse(str("Updated preferences for user: "+user_data["user_name"]))
+
+def get_preferences(request):
+    from codeletter.models import Concept
+
+    res=[]
+    concepts_list=Concept.objects.all()
+    for concept in concepts_list:
+        json_response_ele={}
+        json_response_ele['id']=concept.concept_id
+        json_response_ele['concept_name']=concept.concept_name
+        res.append(json_response_ele)
+    return HttpResponse(str(res))

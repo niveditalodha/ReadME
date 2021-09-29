@@ -22,5 +22,8 @@ urlpatterns = [
     path('', views.home, name = 'home'),
     path('get-random-articles/', views.get_random_articles, name='get-random-articles'),
     path('get-sent-articles/', views.get_sent_articles, name='get-sent-articles'),
-    path('update-read-flag/', views.update_read_flag, name='update-read-flag')
+    path('update-read-flag/', views.update_read_flag, name='update-read-flag'),
+    path('get-preferences/', views.get_preferences, name='get-preferences'),
+    path('update-preferences/', views.update_preferences, name='update-preferences'),
+    path('get-concept-badges/', views.get_concept_badges, name='get-concept-badges/')
 ]
