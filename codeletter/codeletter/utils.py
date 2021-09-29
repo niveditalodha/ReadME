@@ -225,7 +225,7 @@ def get_preferences():
 
 def update_preferences(user_data):
 #user_data={"user_name":1,"preferences":[{"id":"1","concept_name":"asd"},{"id":"2","concept_name":"asda"}]}
-    from codeletter.models import UserPreference,User
+    from codeletter.models import UserPreference,User,UserBadge
     user_object=User.objects.filter(username=user_data["user_name"])[0]
     
     try:
