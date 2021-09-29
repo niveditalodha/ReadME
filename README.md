@@ -1,8 +1,23 @@
+
+
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
 
-[![Build Status](https://travis-ci.org/bsharathramesh/SE_Project1.svg?branch=master)](https://travis-ci.org/bsharathramesh/SE_Project1)
+[![Build Status](https://api.travis-ci.org/niveditalodha/ReadME.svg?branch=main)](https://app.travis-ci.com/github/niveditalodha/ReadME)
+[![codecov](https://codecov.io/gh/niveditalodha/ReadME/branch/main/graph/badge.svg?token=b8a4f0af-7f5e-479e-85d0-0901703d4c3f)](https://codecov.io/gh/niveditalodha/ReadME)
+
+[![Top Language]](https://img.shields.io/github/languages/top/niveditalodha/ReadME)
+
+[![Languages]](https://img.shields.io/github/languages/count/niveditalodha/ReadME)
+
+[![issues]](https://img.shields.io/github/issues/niveditalodha/ReadME)
+
+[![LinesOfCode]](https://img.shields.io/tokei/lines/github/niveditalodha/ReadME)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
+
+
 
 # ReadMe
 ReadMe is a web application that gathers articles from the internet and recommends them to users depending on their likes.
@@ -15,7 +30,6 @@ Below are the techonologies that we have used to build the application.
 - Python3
 - Django
 - django-crontab
-- Angular
 
 
 ## Installation Steps 

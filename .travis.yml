@@ -17,11 +17,7 @@ after_success:
 notifications:
   email:
     recipients: 
-      - mbachu@ncsu.edu
-      - mnagdev@ncsu.edu
-      - aagraw24@ncsu.edu
-      - ppathak@ncsu.edu
-      - tyeh3@ncsu.edu
+      - amengan@ncsu.edu
     
     on_success: never
     on_failure: always
