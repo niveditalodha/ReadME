@@ -3,8 +3,27 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import random
 import re
+from codeletter.models import Concept, Article
 
 
+def insert_article(data_json):
+    concept_ids=get_or_insert_concept(data_json["concepts"])
+    article_rec=Article(url=data_json["url"],title=data_json["title"],abstract=data_json["abstract"],domain=data_json["domain"],concept_ids=concept_ids)
+    article_rec.save()
+
+def get_or_insert_concept(concepts):
+    concept_ids=[]
+    for concept in concepts:
+        concept_rec=Concept.objects.filter(concept_name=concept)
+        if(concept_rec):
+            concept_ids.append(concept_rec[0].concept_id)
+        else:
+            Concept.objects.create(concept_name=concept)
+            concept_saved_rec=Concept.objects.filter(concept_name=concept)[0]
+            print(concept_saved_rec.concept_name)
+            #saved_rec=save_rec.save()
+            concept_ids.append(concept_saved_rec.concept_id)
+    return ','.join([str(i) for i in concept_ids])
 def is_leap(year):
     if year % 4 != 0:
         return False
@@ -36,13 +55,13 @@ def get_tags_and_abstract(url):
     if(divs==None):
       return 0,0
     lis=divs.find_all('li')
-    tags=""
+    tags=[]
     for li in lis:
-      tags=tags+","+li.text
+      tags.append(li.text)
 
     h2s=soup.find_all("p")
     abstract=h2s[3].get_text()
-  return tags[1:],abstract
+  return tags,abstract
 
 year=2020
 selected_days = random.sample([i for i in range(1, 367 if is_leap(year) else 366)], 1)
@@ -72,6 +91,7 @@ for d in selected_days:
         article_page=article_response.text
         article_soup=BeautifulSoup(article_page, 'html.parser')
         tags,abstract=get_tags_and_abstract(article_href)
+        print(tags)
         if(tags==0):
             non_abstract_urls.append(article_href)
             continue
@@ -82,8 +102,6 @@ for d in selected_days:
         article_id += 1
         subtitle = article.find("h4", class_="graf--subtitle")
         subtitle = subtitle.contents[0] if subtitle is not None else ''
-        #image = article.find("img", class_="graf-image")
-        #image = '' if image is None else get_img(image['src'], 'images', f'{article_id}')
         article_url = article.find_all("a")[3]['href'].split('?')[0]
         reading_time = article.find("span", class_="readingTime")
         reading_time = 0 if reading_time is None else int(reading_time['title'].split(' ')[0])
@@ -96,7 +114,10 @@ for d in selected_days:
                 responses = responses[0]
         else:
             responses = 0
-
-    data.append([article_id, article_url, title, subtitle,abstract, tags, responses, reading_time, publication, date])
-    print(data[0])
-    exit()
+        data_json={}
+        data_json["title"]=title
+        data_json["abstract"]=abstract
+        data_json["url"]=article_url
+        data_json["domain"]=publication
+        data_json["concepts"]=tags
+        insert_article(data_json)
