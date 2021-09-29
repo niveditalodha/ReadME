@@ -2,7 +2,7 @@ from django.http import HttpResponse
 
 def login(request):
     from django.contrib.auth.models import User
-    request = {"name":"Nivedita Lodha", "user_email":"nnlodha@ncsu.edu", "username":"nnlodha"}
+    # request = {"name":"Nivedita Lodha", "user_email":"nnlodha@ncsu.edu", "username":"nnlodha"}
     name = request['name']
     username = request['username']
     email = request['user_email']
