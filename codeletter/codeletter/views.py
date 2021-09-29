@@ -115,7 +115,7 @@ def get_concept_badges(user_name):
 
 def update_preferences(user_data):
 #user_data={"user_name":1,"preferences":[{"id":"1","concept_name":"asd"},{"id":"2","concept_name":"asda"}]}
-    user_data={"user_name":"nivedita","preferences":[{"id":"2","concept_name":"concept3"}]}
+    user_data={"user_name":"nivedita","preferences":[{"concept_id":"2","concept_name":"concept3"}]}
     from codeletter.models import UserPreference,User,UserBadge, Concept
     user_object=User.objects.filter(username=user_data["user_name"])[0]
     
@@ -128,7 +128,7 @@ def update_preferences(user_data):
     preference_value_list=[]
     concept_badge_data=[]
     for preference in preference_list:
-        preference_id=preference["id"]
+        preference_id=preference["concept_id"]
         preference_value_list.append(preference_id)
 
         concept_badge={}
@@ -157,13 +157,22 @@ def update_preferences(user_data):
     return HttpResponse(str("Updated preferences for user: "+user_data["user_name"]))
 
 def get_preferences(request):
-    from codeletter.models import Concept
-
+    request={"user_name":"nivedita"}
+    from codeletter.models import Concept, UserPreference, User
     res=[]
     concepts_list=Concept.objects.all()
+    user_object=User.objects.filter(username=request["user_name"])[0]
+    user_preferences_recs=UserPreference.objects.filter(user_id=user_object)
+    user_concept_ids=[]
+    if(user_preferences_recs):
+        user_concept_ids=user_preferences_recs[0].concept_ids.split(",")
     for concept in concepts_list:
         json_response_ele={}
-        json_response_ele['id']=concept.concept_id
+        json_response_ele['concept_id']=concept.concept_id
         json_response_ele['concept_name']=concept.concept_name
+        if(str(concept.concept_id) in user_concept_ids):
+            json_response_ele['checked']=True
+        else:
+            json_response_ele['checked']=False
         res.append(json_response_ele)
     return HttpResponse(str(res))
