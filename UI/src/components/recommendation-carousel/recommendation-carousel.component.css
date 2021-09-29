@@ -1,0 +1,8 @@
+.carousel-image{
+  width:100%;
+}
+@media (max-width: 900px) {
+  .desktop-card{
+    display: none;
+  }
+}
