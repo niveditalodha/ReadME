@@ -1,6 +1,8 @@
-# SE Project 1
+# ReadMe
+ReadMe is a web application which contains articles from the web and 
 
-# ReadMe 
+
+## INTRODUCTION
 
 ### YouTube Link: 
 
@@ -12,27 +14,13 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## INTRODUCTION
 
-ReadMe is a web application w
 
 Below are the techonologies that we have used to build the application.
 Python3
 Django
-Angular
-
-The following steps have to be carried in the main project folder. Not the nested one. the one outside.
-pip install virtualenv
-virtualenv venv -- creates a virtualenv named venv
-venv/scripts/activate -- activates virtualenv
-pip install Django -- in the virtualenv
-python manage.py makemigrations 
-python manage.py migrate
-python manage.py createsuperuser
-enter login credentials which u want to use
-python manage.py runserver -- click on the localhost link and append /admin to the url and enter those login credentials.
-Django
 django-crontab
+Angular
 
 
 ## Installation Steps 
