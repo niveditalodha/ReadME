@@ -1,12 +1,9 @@
-# The following steps have to be carried in the main codeletter folder. Not the nested one. the one outside.
-# pip install virtualenv
-# virtualenv venv -- creates a virtualenv named venv
-# venv/scripts/activate -- activates virtualenv
-# pip install Django -- in the virtualenv
-# python manage.py makemigrations 
-# python manage.py migrate
-# python manage.py createsuperuser
-# enter login credentials which u want to use
-# python manage.py runserver -- click on the localhost link and append /admin to the url and enter those login credentials.
-Django
-django-crontab
+asgiref==3.4.1
+dj-database-url==0.5.0
+Django==3.2.7
+django-crontab==0.7.1
+django-heroku==0.3.1
+gunicorn==20.1.0
+pytz==2021.1
+sqlparse==0.4.2
+whitenoise==5.3.0
