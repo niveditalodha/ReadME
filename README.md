@@ -23,7 +23,6 @@ Below are the techonologies that we have used to build the application.
 - Python3
 - Django
 - django-crontab
-- Angular
 
 
 ## Installation Steps 
