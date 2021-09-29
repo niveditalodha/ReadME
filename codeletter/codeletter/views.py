@@ -1,7 +1,21 @@
 from django.http import HttpResponse
 
-def home(request):
-    return HttpResponse("Request ", request)
+def login(request):
+    from django.contrib.auth.models import User
+    request = {"name":"Nivedita Lodha", "user_email":"nnlodha@ncsu.edu", "username":"nnlodha"}
+    name = request['name']
+    username = request['username']
+    email = request['user_email']
+    user_objs = User.objects.filter(username=username)
+    if(len(user_objs)==0):
+        name = list(name.split(' '))
+        if(len(name)==2):
+            lname = name[1]
+        fname = name[0]
+        User.objects.create(first_name=fname,last_name=lname,email=email,username=username)
+        return HttpResponse("New User")
+    else:   
+        return HttpResponse("Existing User")
 
 def get_random_articles(request):
     from codeletter.models import Concept, Article
