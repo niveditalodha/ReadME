@@ -20,5 +20,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name = 'home'),
-    path('get-random-articles/', views.get_random_articles, name='get-random-articles')
+    path('get-random-articles/', views.get_random_articles, name='get-random-articles'),
+    path('get-sent-articles/', views.get_sent_articles, name='get-sent-articles'),
+    path('update-read-flag/', views.update_read_flag, name='update-read-flag')
 ]
