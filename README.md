@@ -6,8 +6,6 @@ ReadMe is a web application which contains articles from the web and
 
 ### YouTube Link: 
 
-[![Sentiment Analysis](http://i3.ytimg.com/vi/3YbNEt3dYtc/hqdefault.jpg)](https://www.youtube.com/watch?v=IQHcs3QPbOE&feature=youtu.be&ab_channel=MounikaBachu)
-
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
 
 [![Build Status](https://travis-ci.org/bsharathramesh/SE_Project1.svg?branch=master)](https://travis-ci.org/bsharathramesh/SE_Project1)
@@ -17,10 +15,10 @@ ReadMe is a web application which contains articles from the web and
 
 
 Below are the techonologies that we have used to build the application.
-Python3
-Django
-django-crontab
-Angular
+- Python3
+- Django
+- django-crontab
+- Angular
 
 
 ## Installation Steps 
