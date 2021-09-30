@@ -1,5 +1,6 @@
 from django.test import TestCase
-from codeletter.models import UserPreference, User
+from codeletter.models import UserPreference
+from django.contrib.auth.models import User
 
 class UserPreferenceTestCase(TestCase):
     def setUp(self):
