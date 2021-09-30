@@ -1,48 +1,72 @@
-[![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
 
-[![Build Status](https://travis-ci.org/bsharathramesh/SE_Project1.svg?branch=master)](https://travis-ci.org/bsharathramesh/SE_Project1)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.5539734.svg)](https://zenodo.org/badge/doi/10.5281/zenodo.5539734.svg) [![Build Status](https://api.travis-ci.org/niveditalodha/ReadME.svg?branch=main)](https://app.travis-ci.com/github/niveditalodha/ReadME) [![codecov](https://codecov.io/gh/niveditalodha/ReadME/branch/main/graph/badge.svg?token=b8a4f0af-7f5e-479e-85d0-0901703d4c3f)](https://codecov.io/gh/niveditalodha/ReadME) ![Top Language](https://img.shields.io/github/languages/top/niveditalodha/ReadME) ![Languages](https://img.shields.io/github/languages/count/niveditalodha/ReadME) ![issues](https://img.shields.io/github/issues/niveditalodha/ReadME) ![LinesOfCode](https://img.shields.io/tokei/lines/github/niveditalodha/ReadME) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-# ReadMe
+
+---
+
+# ReadME
 ReadMe is a web application that gathers articles from the internet and recommends them to users depending on their likes.
 - User can connect to the applications and select choices such as Machine Learning, Programming, Data Science, and Dev Ops etc. So that only the articles from those areas are shown to the user.
 - Every day, an article is sent to the user's email address based on their choices.
 - The user can search for an article from a pool of articles or use filters to find articles from a specific domain.
 - As a mark of thanks, enthusiastic readers are granted a User Badge.
 
+---
+
+## Techonologies Used:
+
 Below are the techonologies that we have used to build the application.
 - Python3
 - Django
 - Angular
+- HTML
+- CSS
+- JavaScript
+- TypeScript
 
+---
 
 ## Installation Steps 
-1. Run `pip install -r requirements.txt`
-2. Create a virtualenv named venv and activate the venv
+1. Install the packages needed for the project
+	```
+	pip install -r requirements.txt
+	```
+2. Create a virtual Enviornment
 	```
 	virtualenv venv 
+	```
+3. Activate the Environment
+	```
 	source venv/scripts/activate 
 	```
-3. Run Migration commands to create tables in the database
-	```
-	python manage.py makemigrations 
-	python manage.py migrate
-	python manage.py createsuperuser
+3. Run the migration commands to create tables in the database
 	
 	```
-	Create the login credentials when prompted and don't forget to save this, because the same credentials are used to login to the admin console 
+	python manage.py makemigrations
+	```
+	```
+	python manage.py migrate
+	```
+4. Create the login credentials when prompted and don't forget to save this, because the same credentials are used to login to the admin console 
+	```
+	python manage.py createsuperuser
+	```
+
+---
 
 ## Execution Steps 
 
-4. Run `python3 manage.py runserver` at `file path`. 
-5. Next, open the browser and enter, [https://localhost:8000/](localhost:8000/) to open the Web UI of the application.
+1. Run `python3 manage.py runserver` from the folder `/codeletter`. 
+2. Next, open the browser and enter, [https://localhost:4200/](https://localhost:4200/) to open the Web UI of the application.
 
+---
 
 ## Web UI
 
 All the UI Images
 
+---
 
 ## FUTURE SCOPE
 
@@ -50,7 +74,7 @@ All the UI Images
 - List of research conferences happening.
 - Expand the number of domains/areas; right now, we're just showing articles from a few, but there's obviously room for more.
 
-
+---
 
 
 ## Team Members

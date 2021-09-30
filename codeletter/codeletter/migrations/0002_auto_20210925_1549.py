@@ -6,27 +6,27 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('codeletter', '0001_initial'),
+        ("codeletter", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='article',
-            name='concept',
+            model_name="article",
+            name="concept",
         ),
         migrations.AddField(
-            model_name='article',
-            name='concept_ids',
+            model_name="article",
+            name="concept_ids",
             field=models.CharField(max_length=100, null=True),
         ),
         migrations.AlterField(
-            model_name='article',
-            name='article_id',
+            model_name="article",
+            name="article_id",
             field=models.IntegerField(max_length=10, primary_key=True, serialize=False),
         ),
         migrations.AlterField(
-            model_name='concept',
-            name='concept_id',
+            model_name="concept",
+            name="concept_id",
             field=models.IntegerField(max_length=10, primary_key=True, serialize=False),
         ),
     ]
