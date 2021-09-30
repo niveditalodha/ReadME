@@ -3,14 +3,14 @@ python:
   - "3.7.1"
 install:
   - pip3 install -r requirements.txt
-# - pip3 install coverage
+  - pip3 install coverage
 # - pip3 install pylint
 # - pip3 install pytest
 script:
 #   - python -m pytest -v test/
 #   - coverage run --source ./code/ -m pytest -v ./test/
 #  - pylint ./codeletter/codeletter
-  - pylint /codeletter
+  #- pylint /codeletter
   - python codeletter/manage.py test
   - coverage run ./codeletter/manage.py test
 after_success:
