@@ -8,5 +8,13 @@
 # python manage.py createsuperuser
 # enter login credentials which u want to use
 # python manage.py runserver -- click on the localhost link and append /admin to the url and enter those login credentials.
-Django
-django-crontab
+autopep8==1.5.7
+alabaster==0.7.12
+Django==3.2.7
+django-crontab==0.7.1
+beautifulsoup4==4.10.0
+black==21.9b0
+bs4==0.0.1
+pylint==2.11.1
+requests==2.26.0
+Sphinx==4.2.0
