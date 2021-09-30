@@ -175,7 +175,8 @@ def get_concept_badges(user_name):
     :return: returns the userbadge for a particular concept
     :rtype: json http response
     """
-    from codeletter.models import UserBadge, User
+    from codeletter.models import UserBadge
+    from django.contrib.auth.models import User
 
     user_object = User.objects.filter(username=user_name)
     if user_object:
@@ -205,7 +206,8 @@ def update_preferences(user_data):
     #     "user_name": "nivedita",
     #     "preferences": [{"concept_id": "2", "concept_name": "concept3"}],
     # }
-    from codeletter.models import UserPreference, User, UserBadge, Concept
+    from codeletter.models import UserPreference, UserBadge, Concept
+    from django.contrib.auth.models import User
 
     user_object = User.objects.filter(username=user_data["user_name"])[0]
 
@@ -257,7 +259,8 @@ def get_preferences(request):
     :rtype: json http respons
     """
     # request = {"user_name": "nivedita"}
-    from codeletter.models import Concept, UserPreference, User
+    from codeletter.models import Concept, UserPreference
+    from django.contrib.auth.models import User
 
     response = []
     concepts_list = Concept.objects.all()

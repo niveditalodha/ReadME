@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'codeletter',
     'corsheaders',
     'django_nose'
-    # 'django-crontab'
 ]
 # Use nose to run all tests
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
@@ -51,6 +50,7 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=codeletter',
+    '--cover-html'
 ]
 
 MIDDLEWARE = [
@@ -136,7 +136,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-DJANGO_SETTINGS_MODULE = ''
+DJANGO_SETTINGS_MODULE = 'SE21Group17.codeletter.codeletter'
 
 CRONJOBS = [
     ('*/30 * * * *', 'codeletter.send_articles_daily')
