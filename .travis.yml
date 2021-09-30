@@ -5,6 +5,7 @@ install:
   - pip3 install -r requirements.txt
   - pip3 install coverage
   - pip3 install django-nose
+  - pip install pytest-django
 # - pip3 install pylint
 # - pip3 install pytest
 script:
@@ -13,8 +14,8 @@ script:
 #  - pylint ./codeletter/codeletter
   #- pylint /codeletter
   - cd codeletter
-  - python manage.py test
-  - coverage run manage.py test
+  - python -m pytest -v tests
+  - coverage run -m pytest -v tests/
 after_success:
    - bash <(curl -s https://codecov.io/bash)
 
