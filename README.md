@@ -14,9 +14,7 @@ ReadMe is a web application that gathers articles from the internet and recommen
 
 ---
 
-Techonologies Used:
-
-<img src="docs/images/AngularJS-Shield.svg" width="50"/> <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" width = "50"/> <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png" width = "50"/> <img src="https://cdn.freelogovectors.net/wp-content/uploads/2020/11/javascript_logo-768x873.png" width = "50"/>
+## Techonologies Used:
 
 Below are the techonologies that we have used to build the application.
 - Python3

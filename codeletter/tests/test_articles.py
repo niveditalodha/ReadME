@@ -1,6 +1,5 @@
 from django.test import TestCase
-from codeletter.models import Article
-from codeletter.utils import get_or_insert_concept,insert_article
+from codeletter.utils import insert_article
 
 class ArtcilesTestCase(TestCase):
     test_article = {}
