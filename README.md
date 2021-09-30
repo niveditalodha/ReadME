@@ -5,7 +5,7 @@
 
 ---
 
-# ReadMe
+# ReadME
 ReadMe is a web application that gathers articles from the internet and recommends them to users depending on their likes.
 - User can connect to the applications and select choices such as Machine Learning, Programming, Data Science, and Dev Ops etc. So that only the articles from those areas are shown to the user.
 - Every day, an article is sent to the user's email address based on their choices.
