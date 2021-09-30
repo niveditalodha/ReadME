@@ -27,7 +27,7 @@ SECRET_KEY = 'ezqgx2a$p7p59gd5mla8*g(l)e)ai!b)=8i0g9o6%8dnb0x+0h'
 DEBUG = True
 
 ALLOWED_HOSTS = ['readme17se.pythonanywhere.com','127.0.0.1', '*']
-CORS_ORIGIN_ALLOW_ALL = True
+#CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'codeletter',
-    'corsheaders',
+    #'corsheaders',
     'django_nose'
 ]
 # Use nose to run all tests
@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware'
+    #'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'codeletter.urls'
