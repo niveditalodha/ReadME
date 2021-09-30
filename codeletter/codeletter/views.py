@@ -179,16 +179,16 @@ def get_concept_badges(user_name):
 
     user_object = User.objects.filter(username=user_name)
     if user_object:
-        res = []
+        response = []
         user_badges_list = UserBadge.objects.filter(user_id=user_object.pk)
         for user_badge_ele in user_badges_list:
             json_object = {}
             json_object["concept_id"] = user_badge_ele.concept_id
             json_object["user_badge"] = user_badge_ele.user_badge
-            res.append(json_object)
-        return HttpResponse(str(res))
+            response.append(json_object)
+        return HttpResponse(str(response))
     else:
-        return HttpResponse(str("No user badge details"))
+        return HttpResponse(str("No user badge details for user:"+user_name))
 
 
 def update_preferences(user_data):
@@ -259,7 +259,7 @@ def get_preferences(request):
     # request = {"user_name": "nivedita"}
     from codeletter.models import Concept, UserPreference, User
 
-    res = []
+    response = []
     concepts_list = Concept.objects.all()
     user_object = User.objects.filter(username=request["user_name"])[0]
     user_preferences_recs = UserPreference.objects.filter(user_id=user_object)
@@ -274,5 +274,5 @@ def get_preferences(request):
             json_response_ele["checked"] = True
         else:
             json_response_ele["checked"] = False
-        res.append(json_response_ele)
-    return HttpResponse(str(res))
+        response.append(json_response_ele)
+    return HttpResponse(str(response))
