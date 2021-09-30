@@ -12,13 +12,14 @@ import { HomeComponent } from '../components/home/home.component';
 import {RouterModule} from "@angular/router";
 import {AuthGuardService} from "../services/auth-guard/auth-guard.service";
 import { ConferenceComponent } from '../components/conference/conference.component';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {BsModalService} from "ngx-bootstrap/modal";
 import {UserPreferenceComponent} from "../components/user-preference/user-preference.component";
 import {FormsModule} from "@angular/forms";
 import {SearchPipe} from "../pipes/search.pipe";
 import {MyProfileComponent} from "../components/my-profile/my-profile.component";
 import { AccordianComponent } from '../components/accordian/accordian.component';
+import {HttpInterceptorService} from "../services/interceptor/http-interceptor.service";
 
 
 
@@ -63,7 +64,9 @@ import { AccordianComponent } from '../components/accordian/accordian.component'
       ]
     }
   },
-    SocialAuthService, HttpClient, BsModalService],
+    SocialAuthService, HttpClient, BsModalService,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

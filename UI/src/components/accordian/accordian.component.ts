@@ -10,6 +10,8 @@ export class AccordianComponent implements OnInit {
 
   // @ts-ignore
   @Input() conferenceDetails: ConferenceModel[];
+  // @ts-ignore
+  @Input() userConference: boolean;
 
   constructor() { }
 

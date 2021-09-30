@@ -29,8 +29,11 @@
           </div>
           <div style="padding-top:2%; display: inline-block">
             <div style=" display: inline-flex; width: -webkit-fill-available;">
-              <div>
+              <div *ngIf="userConference">
                 <a class="card-link" href="#">Registration Link</a>
+              </div>
+              <div  *ngIf="!userConference">
+                <a class="card-link" href="#" disabled="">Add to Calendar (Upcoming feature)</a>
               </div>
               <div style="padding-left: 5%;">
                 <span>Fee: $100</span>
