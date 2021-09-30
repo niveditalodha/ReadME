@@ -21,6 +21,7 @@ def insert_article(data_json):
         concept_ids=concept_ids,
     )
     article_rec.save()
+    return article_rec
 
 
 def get_or_insert_concept(concepts):

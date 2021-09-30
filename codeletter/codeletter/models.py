@@ -16,10 +16,10 @@ class Concept(models.Model):
 
 class UserPreference(models.Model):
     """
-    :Concept Class: stores all the domains available in the application
+    :Concept UserPreference: stores the user preferences
     :Attributes:
     :user_id: primary key of the table
-    :concept_ids: the areas in which the user is interested in.
+    :concept_ids: the areas in which the users is interested in.
     """
 
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
