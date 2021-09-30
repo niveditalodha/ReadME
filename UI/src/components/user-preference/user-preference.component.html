@@ -1,0 +1,38 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">User Preference</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <!-- forms -->
+    <!-- {{preference | json}} -->
+    <div class="input-group">
+      <input type="text" [(ngModel)]="searchWord" class="form-control shadow-none" placeholder="Search topics" />
+      <div class="input-group-append">
+        <button class="btn btn-primary shadow-none" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+    <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+    <div class="preference">
+      <ul>
+
+        <li *ngFor="let topics of preference | search:searchWord:'preference'">
+          <label class="container">{{topics.concept_name}}
+            <input type="checkbox" [(ngModel)]="topics.checked" [checked]="topics.checked">
+            <span class="checkmark"></span>
+          </label>
+        </li>
+
+
+      </ul>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success pull-right" (click)="updatePreference()"> Update
+    </button>
+  </div>

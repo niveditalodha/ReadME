@@ -12,6 +12,12 @@ import { HomeComponent } from '../components/home/home.component';
 import {RouterModule} from "@angular/router";
 import {AuthGuardService} from "../services/auth-guard/auth-guard.service";
 import { ConferenceComponent } from '../components/conference/conference.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { UserPreferenceComponent } from '../components/user-preference/user-preference.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchPipe } from 'src/pipes/search.pipe';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -23,7 +29,10 @@ import { ConferenceComponent } from '../components/conference/conference.compone
     DailyArticleComponent,
     LoginComponent,
     HomeComponent,
-    ConferenceComponent
+    ConferenceComponent,
+    UserPreferenceComponent,
+    SearchPipe,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +40,14 @@ import { ConferenceComponent } from '../components/conference/conference.compone
     NgbModule,
     RouterModule.forRoot([
       {path: 'login', component: LoginComponent},
+      {path: 'profile', component: MyProfileComponent},
       {path: 'home', component: HomeComponent, canActivate: [AuthGuardService]},
       {path: '', redirectTo: '/login', pathMatch: 'full'},
     ]),
+    ModalModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [{
@@ -48,7 +62,9 @@ import { ConferenceComponent } from '../components/conference/conference.compone
       ]
     }
   },
-  SocialAuthService],
+  SocialAuthService,
+  HttpClient
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

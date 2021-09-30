@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {NgbCarouselConfig, NgbPopoverConfig} from '@ng-bootstrap/ng-bootstrap';
-import {Router} from "@angular/router";
-import {SocialAuthService} from "angularx-social-login";
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { NgbCarouselConfig, NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from "@angular/router";
+import { SocialAuthService } from "angularx-social-login";
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+
 
 
 
@@ -13,7 +15,8 @@ import {SocialAuthService} from "angularx-social-login";
 export class NavigationBarComponent implements OnInit {
 
 
-  constructor(private router:Router, config: NgbPopoverConfig, private socialAuthService: SocialAuthService) {
+  constructor(private router: Router, config: NgbPopoverConfig, private socialAuthService: SocialAuthService,
+    private modalService: BsModalService) {
     config.placement = 'bottom';
     config.triggers = 'click';
   }
@@ -21,12 +24,13 @@ export class NavigationBarComponent implements OnInit {
   ngOnInit(): void {
   }
   navbarOpen = false;
+  modalRef?: BsModalRef;
 
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
   }
 
-  goToProfile(){
+  goToProfile() {
     this.router.navigate(['login']);
   }
 
@@ -34,6 +38,12 @@ export class NavigationBarComponent implements OnInit {
     this.socialAuthService.signOut().then(() => this.router.navigate(['login']));
   }
 
+  openPreference(preference: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(preference);
+  }
 
+  routeToLink(link: string) {
+    this.router.navigate(['/' + link])
+  }
 
 }
