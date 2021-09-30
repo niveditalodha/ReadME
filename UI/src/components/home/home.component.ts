@@ -10,11 +10,11 @@ import {DailyArticleModel} from "../../models/daily-article.model";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  get userDailyArticles(): DailyArticleModel {
+  get userDailyArticles(): DailyArticleModel[] {
     return this._userDailyArticles;
   }
 
-  set userDailyArticles(value: DailyArticleModel) {
+  set userDailyArticles(value: DailyArticleModel[]) {
     this._userDailyArticles = value;
   }
   get userProfile() {
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     this._userProfile = value;
   }
   private _userProfile;
-  private _userDailyArticles!: DailyArticleModel;
+  private _userDailyArticles!: DailyArticleModel[];
   constructor(private router: Router,private socialAuthService: SocialAuthService, private dailyArticleService: DailyArticleService) {
     this._userProfile = socialAuthService
 

@@ -14,10 +14,6 @@ import {AuthGuardService} from "../services/auth-guard/auth-guard.service";
 import { ConferenceComponent } from '../components/conference/conference.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {BsModalService} from "ngx-bootstrap/modal";
-import {UserPreferenceComponent} from "../components/user-preference/user-preference.component";
-import {FormsModule} from "@angular/forms";
-import {SearchPipe} from "../pipes/search.pipe";
-import {MyProfileComponent} from "../components/my-profile/my-profile.component";
 
 
 
@@ -29,21 +25,15 @@ import {MyProfileComponent} from "../components/my-profile/my-profile.component"
     DailyArticleComponent,
     LoginComponent,
     HomeComponent,
-    ConferenceComponent,
-    SearchPipe,
-    MyProfileComponent,
-    UserPreferenceComponent
+    ConferenceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     NgbModule,
     RouterModule.forRoot([
       {path: 'login', component: LoginComponent},
-      {path: 'profile', component: MyProfileComponent},
-      {path: 'conference', component: ConferenceComponent},
       {path: 'home', component: HomeComponent, canActivate: [AuthGuardService]},
       {path: '', redirectTo: '/login', pathMatch: 'full'},
     ]),
