@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
@@ -6,18 +6,20 @@ import { AppComponent } from './app.component';
 import { NavigationBarComponent } from '../components/navigation-bar/navigation-bar.component';
 import { RecommendationCarouselComponent } from '../components/recommendation-carousel/recommendation-carousel.component';
 import { DailyArticleComponent } from '../components/daily-article/daily-article.component';
-import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
+import {GoogleLoginProvider, SocialAuthService} from "angularx-social-login";
 import { LoginComponent } from '../components/login/login.component';
 import { HomeComponent } from '../components/home/home.component';
-import { RouterModule } from "@angular/router";
-import { AuthGuardService } from "../services/auth-guard/auth-guard.service";
+import {RouterModule} from "@angular/router";
+import {AuthGuardService} from "../services/auth-guard/auth-guard.service";
 import { ConferenceComponent } from '../components/conference/conference.component';
-import { HttpClient, HttpClientModule } from "@angular/common/http";
-import { BsModalService } from "ngx-bootstrap/modal";
-import { UserPreferenceComponent } from "../components/user-preference/user-preference.component";
-import { FormsModule } from "@angular/forms";
-import { SearchPipe } from "../pipes/search.pipe";
-import { MyProfileComponent } from "../components/my-profile/my-profile.component";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
+import {BsModalService} from "ngx-bootstrap/modal";
+import {UserPreferenceComponent} from "../components/user-preference/user-preference.component";
+import {FormsModule} from "@angular/forms";
+import {SearchPipe} from "../pipes/search.pipe";
+import {MyProfileComponent} from "../components/my-profile/my-profile.component";
+import { AccordianComponent } from '../components/accordian/accordian.component';
+import {HttpInterceptorService} from "../services/interceptor/http-interceptor.service";
 
 
 
@@ -32,7 +34,8 @@ import { MyProfileComponent } from "../components/my-profile/my-profile.componen
     ConferenceComponent,
     SearchPipe,
     MyProfileComponent,
-    UserPreferenceComponent
+    UserPreferenceComponent,
+    AccordianComponent
   ],
   imports: [
     BrowserModule,
@@ -41,11 +44,11 @@ import { MyProfileComponent } from "../components/my-profile/my-profile.componen
     FormsModule,
     NgbModule,
     RouterModule.forRoot([
-      { path: 'login', component: LoginComponent },
-      { path: 'profile', component: MyProfileComponent },
-      { path: 'conference', component: ConferenceComponent },
-      { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
-      { path: '', redirectTo: '/login', pathMatch: 'full' },
+      {path: 'login', component: LoginComponent},
+      {path: 'profile', component: MyProfileComponent},
+      {path: 'conference', component: ConferenceComponent},
+      {path: 'home', component: HomeComponent, canActivate: [AuthGuardService]},
+      {path: '', redirectTo: '/login', pathMatch: 'full'},
     ]),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -61,8 +64,11 @@ import { MyProfileComponent } from "../components/my-profile/my-profile.componen
       ]
     }
   },
-    SocialAuthService, HttpClient, BsModalService],
+    SocialAuthService, HttpClient, BsModalService,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 

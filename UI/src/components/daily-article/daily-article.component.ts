@@ -8,7 +8,7 @@ import {DailyArticleModel} from "../../models/daily-article.model";
 })
 export class DailyArticleComponent implements OnInit {
 
-  @Input() dailyArticles!: DailyArticleModel;
+  @Input() dailyArticles!: DailyArticleModel[];
 
   constructor() {
 

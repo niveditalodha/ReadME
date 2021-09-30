@@ -8,13 +8,13 @@ import {Observable} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class DailyArticleService extends BaseService<DailyArticleModel>{
+export class DailyArticleService extends BaseService<DailyArticleModel[]>{
 
   constructor(private http: HttpClient) {
     super(http)
   }
 
-  getDailyArticles(): Observable<DailyArticleModel>{
+  getDailyArticles(): Observable<DailyArticleModel[]>{
     return this.get('../../assets/sample-response/sampleResponse1.json');
   }
 }
