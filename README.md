@@ -14,16 +14,15 @@ ReadMe is a web application that gathers articles from the internet and recommen
 Below are the techonologies that we have used to build the application.
 - Python3
 - Django
-- django-crontab
 - Angular
 
 
 ## Installation Steps 
 1. Run `pip install -r requirements.txt`
-2. Create a virtualenv named env and activate the env
+2. Create a virtualenv named venv and activate the venv
 	```
 	virtualenv venv 
-	s0urce venv/scripts/activate 
+	source venv/scripts/activate 
 	```
 3. Run Migration commands to create tables in the database
 	```
@@ -37,7 +36,7 @@ Below are the techonologies that we have used to build the application.
 ## Execution Steps 
 
 4. Run `python3 manage.py runserver` at `file path`. 
-5. Next, open the browser and enter, [https://localhost:4200/](localhost:4200/) to open the Web UI of the application.
+5. Next, open the browser and enter, [https://localhost:8000/](localhost:8000/) to open the Web UI of the application.
 
 
 ## Web UI
