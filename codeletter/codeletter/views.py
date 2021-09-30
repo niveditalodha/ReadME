@@ -201,10 +201,10 @@ def update_preferences(user_data):
     :rtype: string
     """
     # user_data={"user_name":1,"preferences":[{"id":"1","concept_name":"asd"},{"id":"2","concept_name":"asda"}]}
-    user_data = {
-        "user_name": "nivedita",
-        "preferences": [{"concept_id": "2", "concept_name": "concept3"}],
-    }
+    # user_data = {
+    #     "user_name": "nivedita",
+    #     "preferences": [{"concept_id": "2", "concept_name": "concept3"}],
+    # }
     from codeletter.models import UserPreference, User, UserBadge, Concept
 
     user_object = User.objects.filter(username=user_data["user_name"])[0]
@@ -256,7 +256,7 @@ def get_preferences(request):
     :return: returns the concept data
     :rtype: json http respons
     """
-    request = {"user_name": "nivedita"}
+    # request = {"user_name": "nivedita"}
     from codeletter.models import Concept, UserPreference, User
 
     res = []
