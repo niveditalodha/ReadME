@@ -136,7 +136,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-DJANGO_SETTINGS_MODULE = 'codeletter.settings'
+DJANGO_SETTINGS_MODULE = 'codeletter.codeletter.settings'
 
 CRONJOBS = [
     ('*/30 * * * *', 'codeletter.send_articles_daily')
