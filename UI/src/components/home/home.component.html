@@ -2,13 +2,15 @@
 
 <div>
   <div *ngIf="userProfile.authState | async as socialUser">
-    <p>Hello, {{socialUser.name}}!</p>
-    <p>Your email: {{socialUser.email}}</p>
+    <h1 style="padding: 1.5%">Hello, {{socialUser.name}}!</h1>
+    <h2 style="padding-left: 1.5%; padding-bottom: 1%">Daily Article</h2>
+<!--    <p>Your email: {{socialUser.email}}</p>-->
   </div>
 </div>
 <div>
-  <app-daily-article></app-daily-article>
+  <app-daily-article [dailyArticles]=userDailyArticles></app-daily-article>
 </div>
 <div>
+  <h2 style="padding-left: 2%; padding-bottom: 2%">Recommended Articles</h2>
   <app-recommendation-carousel></app-recommendation-carousel>
 </div>

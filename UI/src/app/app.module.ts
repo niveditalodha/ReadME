@@ -12,12 +12,8 @@ import { HomeComponent } from '../components/home/home.component';
 import {RouterModule} from "@angular/router";
 import {AuthGuardService} from "../services/auth-guard/auth-guard.service";
 import { ConferenceComponent } from '../components/conference/conference.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
-import { UserPreferenceComponent } from '../components/user-preference/user-preference.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SearchPipe } from 'src/pipes/search.pipe';
-import { MyProfileComponent } from './my-profile/my-profile.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {BsModalService} from "ngx-bootstrap/modal";
 
 
 
@@ -29,25 +25,18 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     DailyArticleComponent,
     LoginComponent,
     HomeComponent,
-    ConferenceComponent,
-    UserPreferenceComponent,
-    SearchPipe,
-    MyProfileComponent
+    ConferenceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgbModule,
     RouterModule.forRoot([
       {path: 'login', component: LoginComponent},
-      {path: 'profile', component: MyProfileComponent},
       {path: 'home', component: HomeComponent, canActivate: [AuthGuardService]},
       {path: '', redirectTo: '/login', pathMatch: 'full'},
     ]),
-    ModalModule.forRoot(),
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [{
@@ -62,9 +51,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       ]
     }
   },
-  SocialAuthService,
-  HttpClient
-],
+    SocialAuthService, HttpClient, BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
