@@ -1,0 +1,10 @@
+.preference-list {
+    border-bottom: 1px solid black; 
+    margin: 0px 20px 0px 20px; 
+    display: flex; 
+    justify-content: space-between;
+}
+.card-carousal {
+    height: 200px;
+    margin-bottom: 10px;
+}

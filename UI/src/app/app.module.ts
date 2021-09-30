@@ -16,7 +16,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { UserPreferenceComponent } from '../components/user-preference/user-preference.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchPipe } from 'src/pipes/search.pipe';
-import { MyProfileComponent } from './my-profile/my-profile.component';
+import { MyProfileComponent } from '../components/my-profile/my-profile.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 

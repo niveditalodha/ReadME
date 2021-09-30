@@ -10,7 +10,7 @@ export class UserPreferenceComponent implements OnInit {
   preference: any;
   preferenceInterestList:any
   searchWord: any = '';
-  // @Input() modalRef: any;
+  @Input() modalRef: any;
 
   constructor(private commonService: CommonService) { }
 
@@ -19,12 +19,13 @@ export class UserPreferenceComponent implements OnInit {
     this.preferenceInterestList = JSON.parse(JSON.stringify(this.commonService.interestData))   
   }
   updatePreference() {
-    // this.modalRef?.hide()
+    this.commonService.preference = JSON.parse(JSON.stringify (this.preference))
+    this.modalRef?.hide()
 
   }
   closeModal(){
     this.preference = JSON.parse(JSON.stringify(this.commonService.preference));
-    // this.modalRef?.hide()
+    this.modalRef?.hide()
   }
   
 
