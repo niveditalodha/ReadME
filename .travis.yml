@@ -6,12 +6,12 @@ install:
 # - pip3 install coverage
 # - pip3 install pylint
 # - pip3 install pytest
-# script:
+script:
 #   - python -m pytest -v test/
 #   - coverage run --source ./code/ -m pytest -v ./test/
-#   - pylint ReadME/codeletter
-# after_success:
-#   - bash <(curl -s https://codecov.io/bash)
+  - pylint ReadME/codeletter
+after_success:
+   - bash <(curl -s https://codecov.io/bash)
 
 notifications:
   email:
