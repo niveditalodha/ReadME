@@ -122,9 +122,9 @@ def get_tags_and_abstract(url):
         for li in lis:
             tags.append(li.text)
 
-    h2s=soup.find_all("p")
-    abstract=h2s[3].get_text()
-    return tags,abstract
+        h2s=soup.find_all("p")
+        abstract=h2s[3].get_text()
+        return tags,abstract
 
 
 def get_scraped_content(year):
