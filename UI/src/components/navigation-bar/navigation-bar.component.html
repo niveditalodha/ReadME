@@ -9,13 +9,13 @@
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" (click)="routeToLink('home')">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" (click)="routeToLink('profile')">My Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Conference/Fairs</a>
+        <a class="nav-link" (click)="routeToLink('conference')">Conference/Fairs</a>
       </li>
       <button type="button" class="btn btn-outline-secondary" [ngbPopover]="popContent" [popoverTitle]="popTitle">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle"
