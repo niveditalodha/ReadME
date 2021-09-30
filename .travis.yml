@@ -9,7 +9,7 @@ install:
 script:
 #   - python -m pytest -v test/
 #   - coverage run --source ./code/ -m pytest -v ./test/
-  - pylint /codeletter
+  - pylint ./codeletter/codeletter
 after_success:
    - bash <(curl -s https://codecov.io/bash)
 
