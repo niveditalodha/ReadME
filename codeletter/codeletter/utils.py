@@ -112,18 +112,18 @@ def get_tags_and_abstract(url):
         print("redirected")
     else:
         page = response.text
-        soup = BeautifulSoup(page, "html.parser")
-        divs = soup.find("ul", {"class": "cj ck"})
-        if divs == None:
-            return 0, 0
-        lis = divs.find_all("li")
-        tags = []
+        soup = BeautifulSoup(page, 'html.parser')
+        divs=soup.find("ul", {"class": "cj ck"})
+        if(divs==None):
+            return 0,0
+        lis=divs.find_all("li")
+        tags=[]
         for li in lis:
             tags.append(li.text)
 
-        h2s = soup.find_all("p")
-        abstract = h2s[3].get_text()
-    return tags, abstract
+    h2s=soup.find_all("p")
+    abstract=h2s[3].get_text()
+    return tags,abstract
 
 
 def get_scraped_content(year):

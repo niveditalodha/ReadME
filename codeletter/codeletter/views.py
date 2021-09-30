@@ -15,15 +15,10 @@ def login(request):
     :rtype: json http response
     """
     from django.contrib.auth.models import User
-
-    request = {
-        "name": "Nivedita Lodha",
-        "user_email": "nnlodha@ncsu.edu",
-        "username": "nnlodha",
-    }
-    name = request["name"]
-    username = request["username"]
-    email = request["user_email"]
+    # request = {"name":"Nivedita Lodha", "user_email":"nnlodha@ncsu.edu", "username":"nnlodha"}
+    name = request['name']
+    username = request['username']
+    email = request['user_email']
     user_objs = User.objects.filter(username=username)
     if len(user_objs) == 0:
         name = list(name.split(" "))

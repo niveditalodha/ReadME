@@ -1,0 +1,14 @@
+<app-navigation-bar></app-navigation-bar>
+
+<div>
+  <div *ngIf="userProfile.authState | async as socialUser">
+    <p>Hello, {{socialUser.name}}!</p>
+    <p>Your email: {{socialUser.email}}</p>
+  </div>
+</div>
+<div>
+  <app-daily-article></app-daily-article>
+</div>
+<div>
+  <app-recommendation-carousel></app-recommendation-carousel>
+</div>
