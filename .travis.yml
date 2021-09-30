@@ -12,8 +12,9 @@ script:
 #   - coverage run --source ./code/ -m pytest -v ./test/
 #  - pylint ./codeletter/codeletter
   #- pylint /codeletter
-  - python codeletter/manage.py test
-  - coverage run ./codeletter/manage.py test
+  - cd codeletter
+  - python manage.py test
+  - coverage run manage.py test
 after_success:
    - bash <(curl -s https://codecov.io/bash)
 
