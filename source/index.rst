@@ -12,6 +12,11 @@ Welcome to ReadME's documentation!
 
    modules
 
+.. toctree::
+   :maxdepth: 2
+
+   test_modules
+
 
 
 Indices and tables

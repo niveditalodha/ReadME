@@ -1,20 +1,7 @@
 
 
-[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.5539734.svg)](https://zenodo.org/badge/doi/10.5281/zenodo.5539734.svg)
-
-[![Build Status](https://api.travis-ci.org/niveditalodha/ReadME.svg?branch=main)](https://app.travis-ci.com/github/niveditalodha/ReadME)
-[![codecov](https://codecov.io/gh/niveditalodha/ReadME/branch/main/graph/badge.svg?token=b8a4f0af-7f5e-479e-85d0-0901703d4c3f)](https://codecov.io/gh/niveditalodha/ReadME)
-
-![Top Language](https://img.shields.io/github/languages/top/niveditalodha/ReadME)
-
-![Languages](https://img.shields.io/github/languages/count/niveditalodha/ReadME)
-
-![issues](https://img.shields.io/github/issues/niveditalodha/ReadME)
-
-![LinesOfCode](https://img.shields.io/tokei/lines/github/niveditalodha/ReadME)
-
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.5539734.svg)](https://zenodo.org/badge/doi/10.5281/zenodo.5539734.svg)[![Build Status](https://api.travis-ci.org/niveditalodha/ReadME.svg?branch=main)](https://app.travis-ci.com/github/niveditalodha/ReadME)[![codecov](https://codecov.io/gh/niveditalodha/ReadME/branch/main/graph/badge.svg?token=b8a4f0af-7f5e-479e-85d0-0901703d4c3f)](https://codecov.io/gh/niveditalodha/ReadME)
+![Top Language](https://img.shields.io/github/languages/top/niveditalodha/ReadME) ![Languages](https://img.shields.io/github/languages/count/niveditalodha/ReadME) ![issues](https://img.shields.io/github/issues/niveditalodha/ReadME) ![LinesOfCode](https://img.shields.io/tokei/lines/github/niveditalodha/ReadME) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 
 
@@ -37,7 +24,7 @@ Below are the techonologies that we have used to build the application.
 2. Create a virtualenv named env and activate the env
 	```
 	virtualenv venv 
-	s0urce venv/scripts/activate 
+	source venv/scripts/activate 
 	```
 3. Run Migration commands to create tables in the database
 	```
