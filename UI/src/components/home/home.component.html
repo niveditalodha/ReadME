@@ -4,13 +4,16 @@
   <div *ngIf="userProfile.authState | async as socialUser">
     <h1 *ngIf="returningUser" style="padding: 1.5%">Welcome back, {{socialUser.name}}!</h1>
     <h1 *ngIf="!returningUser" style="padding: 1.5%">Welcome, {{socialUser.name}}!</h1>
-    <h2 style="padding-left: 1.5%; padding-bottom: 1%">Daily Article</h2>
-<!--    <p>Your email: {{socialUser.email}}</p>-->
   </div>
 </div>
-<div>
+<div *ngIf="articlesLength > 0; else noPreferences">
+  <h2 style="padding-left: 1.5%; padding-bottom: 1%">Daily Article</h2>
   <app-daily-article [dailyArticles]="userDailyArticles"></app-daily-article>
 </div>
+<ng-template #noPreferences>
+  <h2 style="padding-left: 1.5%; padding-bottom: 1%">Daily Article</h2>
+  <h6 style="padding-left: 1.5%; padding-bottom: 1%"> There are no articles currently. Please select preferences from the preferences page to view daily articles.</h6>
+</ng-template>
 <div>
   <h2 style="padding-left: 2%; padding-bottom: 2%">Recommended Articles</h2>
   <app-recommendation-carousel [randomArticlesList]="randomArticles"></app-recommendation-carousel>

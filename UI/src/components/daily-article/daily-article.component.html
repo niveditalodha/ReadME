@@ -4,7 +4,8 @@
       <h5 class="card-title">{{articleData.title}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{articleData.domain}}</h6>
           <p class="card-text">{{articleData.abstract}}</p>
-      <a [href]="articleData.url" class="card-link">Read Article</a>
+      <a [href]="articleData.url" target="_blank" class="card-link">Read Article</a>
+<!--      <a (click)="goToLink(articleData.url)">Read Article</a>-->
     </div>
   </div>
 </div>

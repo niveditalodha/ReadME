@@ -23,4 +23,8 @@ export class DailyArticleComponent implements OnInit {
     console.log('article abstract', this.articleData.abstract);
   }
 
+  goToLink(url: string){
+    window.open(url, "_blank");
+  }
+
 }

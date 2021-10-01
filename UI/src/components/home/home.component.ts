@@ -12,6 +12,13 @@ import {RandomArticleModel} from "../../models/random-article.model";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  get articlesLength(): number {
+    return this._articlesLength;
+  }
+
+  set articlesLength(value: number) {
+    this._articlesLength = value;
+  }
   get randomArticles(): RandomArticleModel[] {
     return this._randomArticles;
   }
@@ -48,6 +55,7 @@ export class HomeComponent implements OnInit {
     this._userProfile = value;
   }
   private _userProfile;
+  private _articlesLength!: number;
   private _userName!: string | null;
   private _returningUser!: string | null;
   private _randomArticles!: RandomArticleModel[];
@@ -66,6 +74,7 @@ export class HomeComponent implements OnInit {
     this.dailyArticleService.getDailyArticles(this._userName).subscribe(res => {
       console.log('res', res);
       this._userDailyArticles = res;
+      this._articlesLength = this.userDailyArticles.length
     });
   }
 
