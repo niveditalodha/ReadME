@@ -25,9 +25,9 @@ class Login(APIView):
     def post(self, request):
         from django.contrib.auth.models import User
 
-        name = json.loads(request.body)["name"]
-        username = json.loads(request.body)["username"]
-        email = json.loads(request.body)["user_email"]
+        name = json.loads(request.POST)["name"]
+        username = json.loads(request.POST)["username"]
+        email = json.loads(request.POST)["user_email"]
         user_objs = User.objects.filter(username=username)
         if(len(user_objs)==0):
             name = list(name.split(' '))
@@ -95,7 +95,7 @@ class GetSentArticles(APIView):
         from django.contrib.auth.models import User
         from codeletter.models import SentArticle, Concept, Article
 
-        username = json.loads(request.body)['username']
+        username = json.loads(request.POST)['username']
         user_id = User.objects.filter(username=username)[0].pk
         objs = SentArticle.objects.filter(user_id=user_id).order_by('-sent_date')
         json_data = []
@@ -134,8 +134,8 @@ class UpdateReadFlag(APIView):
     def post(self,request):
         from django.contrib.auth.models import User
         from codeletter.models import SentArticle, UserBadge
-        username = json.loads(request.body)['username']
-        sent_article_id = json.loads(request.body)['sent_article_id']
+        username = json.loads(request.POST)['username']
+        sent_article_id = json.loads(request.POST)['sent_article_id']
         user_id = User.objects.filter(username=username)[0].pk
         sent_article_obj = SentArticle.objects.filter(sent_article_id=sent_article_id, user_id = user_id)[0]
         sent_article_obj.read_flag = True
@@ -174,7 +174,7 @@ class GetConceptBadges(APIView):
     permission_classes = [AllowAny]
     def post(self, request):
         from codeletter.models import UserBadge,User
-        user_object=User.objects.filter(username=json.loads(request.body)["username"])[0]
+        user_object=User.objects.filter(username=json.loads(request.POST)["username"])[0]
         res = []
         if(user_object):
             user_badges_list=UserBadge.objects.filter(user_id=user_object.pk)
@@ -198,14 +198,14 @@ class UpdatePreferences(APIView):
     permission_classes = [AllowAny]
     def post(self,request):
         from codeletter.models import UserPreference,User,UserBadge, Concept
-        user_object=User.objects.filter(username=json.loads(request.body)["username"])[0]
+        user_object=User.objects.filter(username=json.loads(request.POST)["username"])[0]
     
         try:
             user_preference_recs = UserPreference.objects.filter(user_id=user_object.pk)
         except UserPreference.DoesNotExist:
             user_preference_recs = None
 
-        preference_list=json.loads(request.body)["preferences"]
+        preference_list=json.loads(request.POST)["preferences"]
         preference_value_list=[]
         concept_badge_data=[]
         for preference in preference_list:
@@ -249,7 +249,7 @@ class GetPreferences(APIView):
         from codeletter.models import Concept, UserPreference, User
         res=[]
         concepts_list=Concept.objects.all()
-        user_object=User.objects.filter(username=json.loads(request.body)["username"])[0]
+        user_object=User.objects.filter(username=json.loads(request.POST)["username"])[0]
         user_preferences_recs=UserPreference.objects.filter(user_id=user_object)
         user_concept_ids=[]
         if(user_preferences_recs):
