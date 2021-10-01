@@ -83,6 +83,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getArticles();
     this.getRandomArticles();
+    this.commonService.setUserName(this._userName);
+    this.commonService.getAllPreferences();
   }
 
   getRandomArticles(){
