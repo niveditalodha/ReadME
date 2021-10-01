@@ -9,9 +9,9 @@
   </div>
 </div>
 <div>
-  <app-daily-article [dailyArticles]=userDailyArticles></app-daily-article>
+  <app-daily-article [dailyArticles]="userDailyArticles"></app-daily-article>
 </div>
 <div>
   <h2 style="padding-left: 2%; padding-bottom: 2%">Recommended Articles</h2>
-  <app-recommendation-carousel></app-recommendation-carousel>
+  <app-recommendation-carousel [randomArticlesList]="randomArticles"></app-recommendation-carousel>
 </div>

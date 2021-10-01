@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {SocialAuthService} from "angularx-social-login";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DailyArticleService} from "../../services/daily-article/daily-article.service";
 import {DailyArticleModel} from "../../models/daily-article.model";
+import {RandomArticleService} from "../../services/random-article-service/random-article.service";
+import {RandomArticleModel} from "../../models/random-article.model";
 
 @Component({
   selector: 'app-home',
@@ -10,6 +12,13 @@ import {DailyArticleModel} from "../../models/daily-article.model";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  get randomArticles(): RandomArticleModel[] {
+    return this._randomArticles;
+  }
+
+  set randomArticles(value: RandomArticleModel[]) {
+    this._randomArticles = value;
+  }
   get userName(): string | null {
     return this._userName;
   }
@@ -41,9 +50,10 @@ export class HomeComponent implements OnInit {
   private _userProfile;
   private _userName!: string | null;
   private _returningUser!: string | null;
+  private _randomArticles!: RandomArticleModel[];
   private _userDailyArticles!: DailyArticleModel[];
   constructor(private router: Router,private socialAuthService: SocialAuthService, private dailyArticleService: DailyArticleService,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute, private randomArticleService: RandomArticleService) {
     this._userProfile = socialAuthService;
     this.returningUser = this.activatedRoute.snapshot.queryParamMap.get('returning_user');
     this.userName = this.activatedRoute.snapshot.queryParamMap.get('username');
@@ -61,6 +71,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getArticles();
+    this.getRandomArticles();
+  }
+
+  getRandomArticles(){
+    this.randomArticleService.getRandomArticles().subscribe(response => {
+      console.log('random artice', response);
+      this._randomArticles = response;
+    })
   }
 
 
