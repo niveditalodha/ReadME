@@ -101,7 +101,7 @@ export class CommonService {
     return data;
   }
   setUserName(userName: string | null) {
-    this.userName = userName;
+    this.userName = 'uma';
   }
   getUserName() {
     return this.userName

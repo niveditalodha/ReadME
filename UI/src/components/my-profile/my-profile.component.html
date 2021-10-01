@@ -10,10 +10,10 @@
         </div>
 
     </div>
-    <div class="card-carousal" *ngIf="isCarousalVisible">
+    <div class="card-carousal" *ngIf="preferenceLength > 0; else displayPrefList">
         <app-recommendation-carousel [randomArticlesList]="preferenceInterestList.articleList"></app-recommendation-carousel>
     </div>
-    <div *ngIf = "!isCarousalVisible">
+    <ng-template #displayPrefList>
         <h6 style="padding-left: 1.5%; padding-bottom: 1%"> There are no articles currently. You will be receiving articles on this topic soon!</h6>
-    </div>
+    </ng-template>
 </div>
