@@ -19,4 +19,8 @@ export class BaseService<T>{
     return this.httpClient.post<T>(url, body).pipe(map(res => res as T));
   }
 
+  postAny(url: string, body: any ){
+    return this.httpClient.post<T>(url, body).pipe(map(res => res as T));
+  }
+
 }

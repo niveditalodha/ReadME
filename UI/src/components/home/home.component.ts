@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { SocialAuthService } from "angularx-social-login";
-import { ActivatedRoute, Router } from "@angular/router";
-import { DailyArticleService } from "../../services/daily-article/daily-article.service";
-import { DailyArticleModel } from "../../models/daily-article.model";
+import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {SocialAuthService} from "angularx-social-login";
+import {ActivatedRoute, Router} from "@angular/router";
+import {DailyArticleService} from "../../services/daily-article/daily-article.service";
+import {DailyArticleModel} from "../../models/daily-article.model";
+import {RandomArticleService} from "../../services/random-article-service/random-article.service";
+import {RandomArticleModel} from "../../models/random-article.model";
 import { CommonService } from 'src/services/common-service/common.service';
 
 @Component({
@@ -11,6 +13,20 @@ import { CommonService } from 'src/services/common-service/common.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  get articlesLength(): number {
+    return this._articlesLength;
+  }
+
+  set articlesLength(value: number) {
+    this._articlesLength = value;
+  }
+  get randomArticles(): RandomArticleModel[] {
+    return this._randomArticles;
+  }
+
+  set randomArticles(value: RandomArticleModel[]) {
+    this._randomArticles = value;
+  }
   get userName(): string | null {
     return this._userName;
   }
@@ -40,11 +56,13 @@ export class HomeComponent implements OnInit {
     this._userProfile = value;
   }
   private _userProfile;
+  private _articlesLength!: number;
   private _userName!: string | null;
   private _returningUser!: string | null;
+  private _randomArticles!: RandomArticleModel[];
   private _userDailyArticles!: DailyArticleModel[];
-  constructor(private router: Router, private socialAuthService: SocialAuthService, private dailyArticleService: DailyArticleService,
-    private activatedRoute: ActivatedRoute, private commonService: CommonService) {
+  constructor(private router: Router,private socialAuthService: SocialAuthService, private dailyArticleService: DailyArticleService,
+              private activatedRoute: ActivatedRoute, private randomArticleService: RandomArticleService, private commonService: CommonService) {
     this._userProfile = socialAuthService;
     this.returningUser = this.activatedRoute.snapshot.queryParamMap.get('returning_user');
     this.userName = this.activatedRoute.snapshot.queryParamMap.get('username');
@@ -57,13 +75,22 @@ export class HomeComponent implements OnInit {
     this.dailyArticleService.getDailyArticles(this._userName).subscribe(res => {
       console.log('res', res);
       this._userDailyArticles = res;
+      this._articlesLength = this.userDailyArticles.length
     });
   }
 
   ngOnInit(): void {
     this.getArticles();
+    this.getRandomArticles();
     this.commonService.setUserName(this._userName)
     this.commonService.getAllPreferences();
+  }
+
+  getRandomArticles(){
+    this.randomArticleService.getRandomArticles().subscribe((response: any) => {
+      console.log('random artice', response);
+      this._randomArticles = response;
+    })
   }
 
 

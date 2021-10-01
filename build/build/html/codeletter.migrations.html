@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>codeletter.migrations package &#8212; ReadME 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Test" href="test_modules.html" />
+    <link rel="prev" title="codeletter package" href="codeletter.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="codeletter-migrations-package">
+<h1>codeletter.migrations package<a class="headerlink" href="#codeletter-migrations-package" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-codeletter.migrations.0001_initial">
+<span id="codeletter-migrations-0001-initial-module"></span><h2>codeletter.migrations.0001_initial module<a class="headerlink" href="#module-codeletter.migrations.0001_initial" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="codeletter.migrations.0001_initial.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">codeletter.migrations.0001_initial.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codeletter.migrations.0001_initial.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="codeletter.migrations.0001_initial.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('auth',</span> <span class="pre">'__first__')]</span></em><a class="headerlink" href="#codeletter.migrations.0001_initial.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="codeletter.migrations.0001_initial.Migration.initial">
+<span class="sig-name descname"><span class="pre">initial</span></span><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#codeletter.migrations.0001_initial.Migration.initial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="codeletter.migrations.0001_initial.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Article',</span> <span class="pre">fields=[('article_id',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('title',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('abstract',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('url',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('domain',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('doi',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('image',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Concept',</span> <span class="pre">fields=[('concept_id',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('concept_name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='UserPreference',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('concept_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;),</span> <span class="pre">('username',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='UserBadge',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('user_badge',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('concept_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;),</span> <span class="pre">('username',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='SentArticle',</span> <span class="pre">fields=[('sent_article_id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('sent_date',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;),</span> <span class="pre">('read_flag',</span> <span class="pre">&lt;django.db.models.fields.BooleanField&gt;),</span> <span class="pre">('article_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;),</span> <span class="pre">('concept_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;),</span> <span class="pre">('username',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='article',</span> <span class="pre">name='concept',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;]</span></em><a class="headerlink" href="#codeletter.migrations.0001_initial.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-codeletter.migrations.0002_auto_20210925_1549">
+<span id="codeletter-migrations-0002-auto-20210925-1549-module"></span><h2>codeletter.migrations.0002_auto_20210925_1549 module<a class="headerlink" href="#module-codeletter.migrations.0002_auto_20210925_1549" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="codeletter.migrations.0002_auto_20210925_1549.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">codeletter.migrations.0002_auto_20210925_1549.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codeletter.migrations.0002_auto_20210925_1549.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="codeletter.migrations.0002_auto_20210925_1549.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('codeletter',</span> <span class="pre">'0001_initial')]</span></em><a class="headerlink" href="#codeletter.migrations.0002_auto_20210925_1549.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="codeletter.migrations.0002_auto_20210925_1549.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;RemoveField</span>&#160; <span class="pre">model_name='article',</span> <span class="pre">name='concept'&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='article',</span> <span class="pre">name='concept_ids',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='article',</span> <span class="pre">name='article_id',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='concept',</span> <span class="pre">name='concept_id',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;&gt;]</span></em><a class="headerlink" href="#codeletter.migrations.0002_auto_20210925_1549.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-codeletter.migrations.0003_auto_20210925_1552">
+<span id="codeletter-migrations-0003-auto-20210925-1552-module"></span><h2>codeletter.migrations.0003_auto_20210925_1552 module<a class="headerlink" href="#module-codeletter.migrations.0003_auto_20210925_1552" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="codeletter.migrations.0003_auto_20210925_1552.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">codeletter.migrations.0003_auto_20210925_1552.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codeletter.migrations.0003_auto_20210925_1552.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="codeletter.migrations.0003_auto_20210925_1552.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('codeletter',</span> <span class="pre">'0002_auto_20210925_1549')]</span></em><a class="headerlink" href="#codeletter.migrations.0003_auto_20210925_1552.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="codeletter.migrations.0003_auto_20210925_1552.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;RemoveField</span>&#160; <span class="pre">model_name='sentarticle',</span> <span class="pre">name='concept_id'&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='sentarticle',</span> <span class="pre">name='concept_ids',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#codeletter.migrations.0003_auto_20210925_1552.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-codeletter.migrations.0004_auto_20210925_1616">
+<span id="codeletter-migrations-0004-auto-20210925-1616-module"></span><h2>codeletter.migrations.0004_auto_20210925_1616 module<a class="headerlink" href="#module-codeletter.migrations.0004_auto_20210925_1616" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="codeletter.migrations.0004_auto_20210925_1616.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">codeletter.migrations.0004_auto_20210925_1616.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codeletter.migrations.0004_auto_20210925_1616.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="codeletter.migrations.0004_auto_20210925_1616.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('codeletter',</span> <span class="pre">'0003_auto_20210925_1552')]</span></em><a class="headerlink" href="#codeletter.migrations.0004_auto_20210925_1616.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="codeletter.migrations.0004_auto_20210925_1616.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;RemoveField</span>&#160; <span class="pre">model_name='userpreference',</span> <span class="pre">name='concept_id'&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='userpreference',</span> <span class="pre">name='concept_ids',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#codeletter.migrations.0004_auto_20210925_1616.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-codeletter.migrations.0005_rename_username_userpreference_user_id">
+<span id="codeletter-migrations-0005-rename-username-userpreference-user-id-module"></span><h2>codeletter.migrations.0005_rename_username_userpreference_user_id module<a class="headerlink" href="#module-codeletter.migrations.0005_rename_username_userpreference_user_id" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="codeletter.migrations.0005_rename_username_userpreference_user_id.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">codeletter.migrations.0005_rename_username_userpreference_user_id.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codeletter.migrations.0005_rename_username_userpreference_user_id.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="codeletter.migrations.0005_rename_username_userpreference_user_id.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('codeletter',</span> <span class="pre">'0004_auto_20210925_1616')]</span></em><a class="headerlink" href="#codeletter.migrations.0005_rename_username_userpreference_user_id.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="codeletter.migrations.0005_rename_username_userpreference_user_id.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;RenameField</span>&#160; <span class="pre">model_name='userpreference',</span> <span class="pre">old_name='username',</span> <span class="pre">new_name='user_id'&gt;]</span></em><a class="headerlink" href="#codeletter.migrations.0005_rename_username_userpreference_user_id.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-codeletter.migrations.0006_auto_20210925_1758">
+<span id="codeletter-migrations-0006-auto-20210925-1758-module"></span><h2>codeletter.migrations.0006_auto_20210925_1758 module<a class="headerlink" href="#module-codeletter.migrations.0006_auto_20210925_1758" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="codeletter.migrations.0006_auto_20210925_1758.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">codeletter.migrations.0006_auto_20210925_1758.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codeletter.migrations.0006_auto_20210925_1758.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="codeletter.migrations.0006_auto_20210925_1758.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('codeletter',</span> <span class="pre">'0005_rename_username_userpreference_user_id')]</span></em><a class="headerlink" href="#codeletter.migrations.0006_auto_20210925_1758.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="codeletter.migrations.0006_auto_20210925_1758.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;RenameField</span>&#160; <span class="pre">model_name='sentarticle',</span> <span class="pre">old_name='username',</span> <span class="pre">new_name='user_id'&gt;,</span> <span class="pre">&lt;RenameField</span>&#160; <span class="pre">model_name='userbadge',</span> <span class="pre">old_name='username',</span> <span class="pre">new_name='user_id'&gt;]</span></em><a class="headerlink" href="#codeletter.migrations.0006_auto_20210925_1758.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-codeletter.migrations">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-codeletter.migrations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">ReadME</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ReadME</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="codeletter.html">codeletter package</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="test_modules.html">Test</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">ReadME</a><ul>
+  <li><a href="codeletter.html">codeletter package</a><ul>
+      <li>Previous: <a href="codeletter.html" title="previous chapter">codeletter package</a></li>
+      <li>Next: <a href="test_modules.html" title="next chapter">Test</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Group17.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/codeletter.migrations.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
