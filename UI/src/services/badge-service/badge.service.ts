@@ -11,7 +11,7 @@ export class BadgeService extends BaseService<any> {
   constructor(private http: HttpClient) {
     super(http)
   }
-  getPreferenceList(username: string | null): Observable<any> {
+  getBadgeDetails(username: string | null): Observable<any> {
 
     this.payload = {
       "username": username
