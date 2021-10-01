@@ -26,7 +26,8 @@ SECRET_KEY = 'ezqgx2a$p7p59gd5mla8*g(l)e)ai!b)=8i0g9o6%8dnb0x+0h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['readme17se.pythonanywhere.com','127.0.0.1', '*']
+#CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -39,8 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'codeletter',
-    
-    # 'django-crontab'
+    #'corsheaders',
+    'django_nose'
+]
+# Use nose to run all tests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# Tell nose to measure coverage on the 'foo' and 'bar' apps
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=codeletter',
+    '--cover-html'
 ]
 
 MIDDLEWARE = [
@@ -51,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'codeletter.urls'
@@ -125,10 +136,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-DJANGO_SETTINGS_MODULE = ''
+DJANGO_SETTINGS_MODULE = 'codeletter.codeletter.settings'
 
 CRONJOBS = [
-    ('*/15 * * * *', 'codeletter.scripts.collect_articles_daily')
+    ('*/30 * * * *', 'codeletter.send_articles_daily')
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

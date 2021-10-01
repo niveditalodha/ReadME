@@ -1,15 +1,15 @@
-"""codeletter URL Configuration
+"""
+    codeletter URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
-Examples:
-Function views
+    The `urlpatterns` list routes URLs to views. For more information please see: https://docs.djangoproject.com/en/3.1/topics/http/urls/
+    Examples:
+    Function views
     1. Add an import:  from my_app import views
     2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
+    Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
+    Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
@@ -18,12 +18,12 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.login, name = 'login'),
-    path('get-random-articles/', views.get_random_articles, name='get-random-articles'),
-    path('get-sent-articles/', views.get_sent_articles, name='get-sent-articles'),
-    path('update-read-flag/', views.update_read_flag, name='update-read-flag'),
-    path('get-preferences/', views.get_preferences, name='get-preferences'),
-    path('update-preferences/', views.update_preferences, name='update-preferences'),
-    path('get-concept-badges/', views.get_concept_badges, name='get-concept-badges/')
+    path("admin/", admin.site.urls),
+    path("", views.login, name="login"),
+    path("get-random-articles/", views.get_random_articles, name="get-random-articles"),
+    path("get-sent-articles/", views.get_sent_articles, name="get-sent-articles"),
+    path("update-read-flag/", views.update_read_flag, name="update-read-flag"),
+    path("get-preferences/", views.get_preferences, name="get-preferences"),
+    path("update-preferences/", views.update_preferences, name="update-preferences"),
+    path("get-concept-badges/", views.get_concept_badges, name="get-concept-badges/"),
 ]

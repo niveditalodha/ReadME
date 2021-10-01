@@ -14,7 +14,8 @@ def send_email(details):
                 fail_silently=False,
             )):
                 print(detail['user_id'])
-                SentArticle.objects.create(user_id = detail['user_id'], article_id=detail['article_id'], concept_ids=detail['concept_ids'])
+                l = SentArticle.objects.all()
+                SentArticle.objects.create(sent_article_id=len(l)+1, user_id = detail['user_id'], article_id=detail['article_id'], concept_ids=detail['concept_ids'])
             
 
 def cronjob():

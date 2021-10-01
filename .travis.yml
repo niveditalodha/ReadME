@@ -2,26 +2,28 @@ language: python
 python:
   - "3.7.1"
 install:
-  - pip3 install .
   - pip3 install -r requirements.txt
   - pip3 install coverage
-  - pip3 install pylint
-  - pip3 install pytest
+  - pip3 install django-nose
+  - pip install pytest-django
+# - pip3 install pylint
+# - pip3 install pytest
 script:
-  - python -m pytest -v test/
-  - coverage run --source ./code/ -m pytest -v ./test/
-  - pylint code/
+#   - python -m pytest -v test/
+#   - coverage run --source ./code/ -m pytest -v ./test/
+#  - pylint ./codeletter/codeletter
+  #- pylint /codeletter
+  - export DJANGO_SETTINGS_MODULE=codeletter.settings
+  - cd codeletter
+  - python -m pytest -v tests
+  - coverage run -m pytest -v tests/
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+   - bash <(curl -s https://codecov.io/bash)
 
 notifications:
   email:
     recipients: 
-      - mbachu@ncsu.edu
-      - mnagdev@ncsu.edu
-      - aagraw24@ncsu.edu
-      - ppathak@ncsu.edu
-      - tyeh3@ncsu.edu
+      - amengan@ncsu.edu
     
     on_success: never
     on_failure: always
