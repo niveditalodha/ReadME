@@ -1,0 +1,16 @@
+<app-navigation-bar></app-navigation-bar>
+
+<div *ngFor="let preference of preferenceInterestList">
+    <div class="d-flex" class="preference-list">
+        <div class="mr-auto p-2">
+            <h4>{{preference.concept_name}}</h4>
+        </div>
+        <div class="p-2" style="margin-top: 8px;">
+            <h6>Level: &nbsp; {{preference.badge}} </h6>
+        </div>
+
+    </div>
+    <div class="card-carousal">
+        <app-recommendation-carousel></app-recommendation-carousel>
+    </div>
+</div>

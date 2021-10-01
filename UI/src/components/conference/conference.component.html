@@ -1,1 +1,10 @@
-<p>conference works!</p>
+<app-navigation-bar></app-navigation-bar>
+<div style="padding: 2%">
+  <h3>Your conferences</h3>
+  <app-accordian [conferenceDetails]="userConferences" [userConference]=true></app-accordian>
+</div>
+<div style="padding: 2%">
+  <h3>Upcoming Conferences</h3>
+  <app-accordian [conferenceDetails]="userConferences" [userConference]=false></app-accordian>
+</div>
+

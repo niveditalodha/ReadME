@@ -12,6 +12,14 @@ import { HomeComponent } from '../components/home/home.component';
 import {RouterModule} from "@angular/router";
 import {AuthGuardService} from "../services/auth-guard/auth-guard.service";
 import { ConferenceComponent } from '../components/conference/conference.component';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
+import {BsModalService} from "ngx-bootstrap/modal";
+import {FormsModule} from "@angular/forms";
+import { AccordianComponent } from '../components/accordian/accordian.component';
+import {HttpInterceptorService} from "../services/interceptor/http-interceptor.service";
+import { SearchPipe } from 'src/pipes/search.pipe';
+import { MyProfileComponent } from 'src/components/my-profile/my-profile.component';
+import { UserPreferenceComponent } from 'src/components/user-preference/user-preference.component';
 
 
 
@@ -23,14 +31,22 @@ import { ConferenceComponent } from '../components/conference/conference.compone
     DailyArticleComponent,
     LoginComponent,
     HomeComponent,
-    ConferenceComponent
+    ConferenceComponent,
+    SearchPipe,
+    MyProfileComponent,
+    UserPreferenceComponent,
+    AccordianComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
     NgbModule,
     RouterModule.forRoot([
       {path: 'login', component: LoginComponent},
+      {path: 'profile', component: MyProfileComponent},
+      {path: 'conference', component: ConferenceComponent},
       {path: 'home', component: HomeComponent, canActivate: [AuthGuardService]},
       {path: '', redirectTo: '/login', pathMatch: 'full'},
     ]),
@@ -48,7 +64,11 @@ import { ConferenceComponent } from '../components/conference/conference.compone
       ]
     }
   },
-  SocialAuthService],
+    SocialAuthService, HttpClient, BsModalService,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

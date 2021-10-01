@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+    "target": "https://readme17se.pythonanywhere.com",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

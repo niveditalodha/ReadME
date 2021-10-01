@@ -5,4 +5,25 @@
   .desktop-card{
     display: none;
   }
+  .right-div{
+    width: 50%;
+    margin-right: 5%;
+  }
+
+  .left-div{
+    width: 50%;
+    margin-left: 5%;
+  }
+}
+.desktop-card{
+  width: 50%;
+  margin-right: 5%;
+}
+.right-div{
+  width: 50%;
+}
+
+.left-div{
+  width: 50%;
+  margin-left: 5%;
 }

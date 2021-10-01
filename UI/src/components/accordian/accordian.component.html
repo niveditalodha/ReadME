@@ -1,0 +1,58 @@
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+  <ng-template *ngFor="let conference of conferenceDetails">
+    <ngb-panel title="{{conference.conference_title}}">
+      <ng-template ngbPanelContent>
+        {{conference.conference_description}}
+      </ng-template>
+    </ngb-panel>
+  </ng-template>
+
+  <ngb-panel>
+    <ng-template ngbPanelTitle>
+      <span><b>Fancy</b> title</span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <div class="row">
+              <div class="col-sm-10">
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              </div>
+              <div class="col-sm-2">
+                <h6 class="card-subtitle mb-2 text-muted">Date: 01/03/2021</h6>
+              </div>
+            </div>
+          </div>
+          <div>
+            dfvmwkejnvwoeflmvwdofvnoevmqpeofkmvoejfnvopevmqdlf
+          </div>
+          <div style="padding-top:2%; display: inline-block">
+            <div style=" display: inline-flex; width: -webkit-fill-available;">
+              <div *ngIf="userConference">
+                <a class="card-link" href="#">Registration Link</a>
+              </div>
+              <div  *ngIf="!userConference">
+                <a class="card-link" href="#" disabled="">Add to Calendar (Upcoming feature)</a>
+              </div>
+              <div style="padding-left: 5%;">
+                <span>Fee: $100</span>
+              </div>
+            </div>
+            <div style="padding-top:2%; display: inline-flex">
+              <div>
+                <span class="badge bg-danger">Virtual</span>
+              </div>
+              <div style="padding-left: 5%;">
+                <span class="badge bg-info">Onsite</span>
+              </div>
+              <div style="padding-left: 5%;">
+                <span class="badge bg-warning">Hybrid</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
