@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SocialAuthService} from "angularx-social-login";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {DailyArticleService} from "../../services/daily-article/daily-article.service";
 import {DailyArticleModel} from "../../models/daily-article.model";
 
@@ -10,6 +10,13 @@ import {DailyArticleModel} from "../../models/daily-article.model";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  get returningUser(): string | null {
+    return this._returningUser;
+  }
+
+  set returningUser(value: string | null) {
+    this._returningUser = value;
+  }
   get userDailyArticles(): DailyArticleModel[] {
     return this._userDailyArticles;
   }
@@ -25,10 +32,20 @@ export class HomeComponent implements OnInit {
     this._userProfile = value;
   }
   private _userProfile;
+  private _returningUser!: string | null;
   private _userDailyArticles!: DailyArticleModel[];
-  constructor(private router: Router,private socialAuthService: SocialAuthService, private dailyArticleService: DailyArticleService) {
-    this._userProfile = socialAuthService
-
+  constructor(private router: Router,private socialAuthService: SocialAuthService, private dailyArticleService: DailyArticleService,
+              private activatedRoute: ActivatedRoute) {
+    this._userProfile = socialAuthService;
+    this.returningUser = this.activatedRoute.snapshot.queryParamMap.get('returning_user');
+    console.log('returning user :: ', this.returningUser);
+    // this.route.paramMap.subscribe(params => {
+    //
+    //     // @ts-ignore
+    //   this._returningUser = params.get('returning_user');
+    //
+    //   });
+    console.log('user profile', this._userProfile )
   }
 
 

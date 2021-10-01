@@ -65,11 +65,11 @@ export class DailyArticleService extends BaseService<any>{
     // return this.post('https://readme17se.pythonanywhere.com/get-preferences', this.payload);
 
 
-    this.payload = {
-      "username":"nnlodha"
-    };
-    return this.post('https://readme17se.pythonanywhere.com/get-concept-badges', this.payload);
+    // this.payload = {
+    //   "username":"nnlodha"
+    // };
+    // return this.post('https://readme17se.pythonanywhere.com/get-concept-badges', this.payload);
 
-    // return this.get('../../assets/sample-response/sampleResponse1.json');
+    return this.get('../../assets/sample-response/sampleResponse1.json');
   }
 }

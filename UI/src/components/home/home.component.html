@@ -2,7 +2,8 @@
 
 <div>
   <div *ngIf="userProfile.authState | async as socialUser">
-    <h1 style="padding: 1.5%">Hello, {{socialUser.name}}!</h1>
+    <h1 *ngIf="returningUser" style="padding: 1.5%">Welcome back, {{socialUser.name}}!</h1>
+    <h1 *ngIf="!returningUser" style="padding: 1.5%">Welcome, {{socialUser.name}}!</h1>
     <h2 style="padding-left: 1.5%; padding-bottom: 1%">Daily Article</h2>
 <!--    <p>Your email: {{socialUser.email}}</p>-->
   </div>
