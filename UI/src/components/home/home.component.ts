@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {SocialAuthService} from "angularx-social-login";
-import {ActivatedRoute, Router} from "@angular/router";
-import {DailyArticleService} from "../../services/daily-article/daily-article.service";
-import {DailyArticleModel} from "../../models/daily-article.model";
+import { SocialAuthService } from "angularx-social-login";
+import { ActivatedRoute, Router } from "@angular/router";
+import { DailyArticleService } from "../../services/daily-article/daily-article.service";
+import { DailyArticleModel } from "../../models/daily-article.model";
+import { CommonService } from 'src/services/common-service/common.service';
 
 @Component({
   selector: 'app-home',
@@ -42,17 +43,17 @@ export class HomeComponent implements OnInit {
   private _userName!: string | null;
   private _returningUser!: string | null;
   private _userDailyArticles!: DailyArticleModel[];
-  constructor(private router: Router,private socialAuthService: SocialAuthService, private dailyArticleService: DailyArticleService,
-              private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router, private socialAuthService: SocialAuthService, private dailyArticleService: DailyArticleService,
+    private activatedRoute: ActivatedRoute, private commonService: CommonService) {
     this._userProfile = socialAuthService;
     this.returningUser = this.activatedRoute.snapshot.queryParamMap.get('returning_user');
     this.userName = this.activatedRoute.snapshot.queryParamMap.get('username');
     console.log('returning user :: ', this.returningUser, this.userName);
-    console.log('user profile', this._userProfile )
+    console.log('user profile', this._userProfile)
   }
 
 
-  getArticles(){
+  getArticles() {
     this.dailyArticleService.getDailyArticles(this._userName).subscribe(res => {
       console.log('res', res);
       this._userDailyArticles = res;
@@ -61,6 +62,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getArticles();
+    this.commonService.setUserName(this._userName)
+    this.commonService.getAllPreferences();
   }
 
 

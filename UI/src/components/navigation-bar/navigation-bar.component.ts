@@ -3,6 +3,7 @@ import { NgbCarouselConfig, NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap'
 import { Router } from "@angular/router";
 import { SocialAuthService } from "angularx-social-login";
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { CommonService } from 'src/services/common-service/common.service';
 
 
 
@@ -18,7 +19,7 @@ export class NavigationBarComponent implements OnInit {
 
 
   constructor(private router: Router, config: NgbPopoverConfig, private socialAuthService: SocialAuthService,
-    private modalService: BsModalService) {
+    private modalService: BsModalService, private commonService: CommonService) {
     config.placement = 'bottom';
     config.triggers = 'click';
   }

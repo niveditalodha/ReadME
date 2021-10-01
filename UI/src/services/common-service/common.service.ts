@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { UserPreferenceService } from '../user-preference/user-preference.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ export class CommonService {
   sentArticles: any
   badge: any
   interestData: any
-  constructor(private http: HttpClient) {
+  userName!: string | null;
+  constructor(private http: HttpClient, private userPreferenceService: UserPreferenceService) {
     this.preference = [
       { "concept_id": 1, "checked": true, "concept_name": "Artificial Intelligence" },
       { "concept_id": 2, "checked": true, "concept_name": "Graph Mining" },
@@ -96,18 +98,19 @@ export class CommonService {
     });
     return data;
   }
-
-  testIntegration() {
-    let headers = new HttpHeaders()
-    headers = headers.set("Access-Control-Allow-Origin","*")
-    let url = "https://readme17se.pythonanywhere.com/get-random-articles"
-    // let url = "https://readme17se.pythonanywhere.com/api/get-random-articles"
-    this.http.get(url, {headers:headers}).subscribe((data)=>{
-      console.log(JSON.stringify(data))
-    })
-    
+  setUserName(userName: string | null) {
+    this.userName = userName;
   }
-
+  getUserName() {
+    return this.userName
+  }
+  
+  getAllPreferences() {
+    this.userPreferenceService.getPreferenceList(this.userName).subscribe((response: any) => {
+      this.preference = JSON.parse(JSON.stringify(response))
+      debugger
+    })
+  }
 }
 
 export class PreferenceInterest {
