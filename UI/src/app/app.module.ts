@@ -14,12 +14,12 @@ import {AuthGuardService} from "../services/auth-guard/auth-guard.service";
 import { ConferenceComponent } from '../components/conference/conference.component';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {BsModalService} from "ngx-bootstrap/modal";
-import {UserPreferenceComponent} from "../components/user-preference/user-preference.component";
 import {FormsModule} from "@angular/forms";
-import {SearchPipe} from "../pipes/search.pipe";
-import {MyProfileComponent} from "../components/my-profile/my-profile.component";
 import { AccordianComponent } from '../components/accordian/accordian.component';
 import {HttpInterceptorService} from "../services/interceptor/http-interceptor.service";
+import { SearchPipe } from 'src/pipes/search.pipe';
+import { MyProfileComponent } from 'src/components/my-profile/my-profile.component';
+import { UserPreferenceComponent } from 'src/components/user-preference/user-preference.component';
 
 
 
