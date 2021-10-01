@@ -6,8 +6,8 @@
 | Issues reports: there are **many**| 2 | Total issues opened 10 Badges are added in the README file. See [README.md](https://github.com/niveditalodha/ReadME/blob/main/README.md) See [Issues](https://github.com/niveditalodha/ReadME/issues) |
 | issues are being  closed| 2| Total issues closed 6 https://github.com/niveditalodha/ReadME/issues
 | DOI badge: exists | 3 | GitHub README.md https://zenodo.org/record/5539790#.YVYlay1h1QJ |
-|Docs: doco generated , format not ugly |2| Documentation is generated using sphinx |
-|Docs: what: point descriptions of each class/function (in isolation) | 2 | Every method in a file has the definition, parameters, types and return types. |
+|Docs: doco generated , format not ugly |2| Documentation is generated using sphinx, https://niveditalodha.github.io/ReadME/ |
+|Docs: what: point descriptions of each class/function (in isolation) | 2 | Every method in a file has the definition, parameters, types and return types. https://niveditalodha.github.io/ReadME/ |
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|3| Please see the use cases here, https://docs.google.com/document/d/1RJIEvoCBdZO_TtiTOEpdSlNscebum9NKvma1O3Pd8Ro/edit?usp=sharing |
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|3 |See [README.md](https://github.com/niveditalodha/ReadME) |
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|2|See [README.md](https://github.com/niveditalodha/ReadME)|
