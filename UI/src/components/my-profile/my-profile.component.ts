@@ -13,7 +13,6 @@ export class MyProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.preferenceInterestList = JSON.parse(JSON.stringify(this.commonService.interestData));
-    this.commonService.testIntegration();
   }
 
 }

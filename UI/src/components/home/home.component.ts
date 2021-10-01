@@ -5,6 +5,7 @@ import {DailyArticleService} from "../../services/daily-article/daily-article.se
 import {DailyArticleModel} from "../../models/daily-article.model";
 import {RandomArticleService} from "../../services/random-article-service/random-article.service";
 import {RandomArticleModel} from "../../models/random-article.model";
+import { CommonService } from 'src/services/common-service/common.service';
 
 @Component({
   selector: 'app-home',
@@ -61,16 +62,17 @@ export class HomeComponent implements OnInit {
   private _randomArticles!: RandomArticleModel[];
   private _userDailyArticles!: DailyArticleModel[];
   constructor(private router: Router,private socialAuthService: SocialAuthService, private dailyArticleService: DailyArticleService,
-              private activatedRoute: ActivatedRoute, private randomArticleService: RandomArticleService) {
+              private activatedRoute: ActivatedRoute, private randomArticleService: RandomArticleService, private commonService: CommonService) {
     this._userProfile = socialAuthService;
     this.returningUser = this.activatedRoute.snapshot.queryParamMap.get('returning_user');
     this.userName = this.activatedRoute.snapshot.queryParamMap.get('username');
     // console.log('returning user :: ', this.returningUser, this.userName);
     // console.log('user profile', this._userProfile )
+
   }
 
 
-  getArticles(){
+  getArticles() {
     this.dailyArticleService.getDailyArticles(this._userName).subscribe(res => {
       // console.log('res', res);
       this._userDailyArticles = res;
@@ -81,11 +83,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getArticles();
     this.getRandomArticles();
+    this.commonService.setUserName(this._userName)
+    this.commonService.getAllPreferences();
   }
 
   getRandomArticles(){
-    this.randomArticleService.getRandomArticles().subscribe(response => {
-      // console.log('random artice', response);
+    this.randomArticleService.getRandomArticles().subscribe((response: any) => {
+      console.log('random artice', response);
       this._randomArticles = response;
     })
   }
