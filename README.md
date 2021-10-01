@@ -6,6 +6,9 @@
 ---
 
 # ReadME
+
+<img src="codeletter/static/admin/img/readme.jpeg" height="400" width="400"/> 
+
 ReadMe is a web application that gathers articles from the internet and recommends them to users depending on their likes.
 - User can connect to the applications and select choices such as Machine Learning, Programming, Data Science, and Dev Ops etc. So that only the articles from those areas are shown to the user.
 - Every day, an article is sent to the user's email address based on their choices.
@@ -60,8 +63,9 @@ Below are the techonologies that we have used to build the application.
 1. Run `python3 manage.py runserver` from the folder `/codeletter`. 
 2. Next, open the browser and enter, https://localhost:{port_number}}/ to make post requests to APIs.
 3. At the admin/ page, you can add dummy data in the models and make POST requests to test the APIs. 
-4. The APIs are available at https://readme17se.pythonanywhere.com/ and their brief documentation is available at [here](https://docs.google.com/spreadsheets/d/1H-hvEmOf9RNG6zr111A7DrE30HSd6UZr67vFTpskBXE/edit?usp=sharing).
+4. The API url is https://readme17se.pythonanywhere.com/ and their endpoints and respective documentation is available at [here](https://docs.google.com/spreadsheets/d/1H-hvEmOf9RNG6zr111A7DrE30HSd6UZr67vFTpskBXE/edit?usp=sharing).
 5. The concepts and articles are scraped from towardsdatascience.com and the scraper function get_scraped_content(year) is available in the file codeletter/utils.py.
+6. The file codeletter/send_articles_daily.py contains a function cronjob() which takes all users from the database and sends them a new article everyday based on their preference. 
 
 ---
 

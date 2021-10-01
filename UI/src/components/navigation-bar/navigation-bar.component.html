@@ -30,17 +30,19 @@
 </nav>
 
 <ng-template #popContent>
-  <table>
-    <tr (click)="openPreference(preference)">
-      My Preference
-    </tr>
-    <tr>
-      <button (click)="logout()">Logout</button>
-    </tr>
-  </table>
+<!-- <div>-->
+   <button style="margin: 5%;" (click)="openPreference(preference)" class="btn btn-dark">
+     Preferences
+   </button>
+   <button style="margin: 5%" (click)="logout()" class="btn btn-dark">
+     Logout
+   </button>
+<!-- </div>-->
 </ng-template>
 <ng-template #popTitle>
-  My Profile
+ <div>
+   My Profile
+ </div>
 </ng-template>
 
 <ng-template #preference>
