@@ -18,8 +18,7 @@
 | Use of code coverage | 3 | Used codecov and coverage package to show the percentage. We achieved 68% coverage. https://app.codecov.io/gh/niveditalodha/ReadME|
 | other automated analysis tools|3| We used pylint and coverage scripts to check for style,code and syntax checkers and code coverage percentage in the Travis CI pipeline.Badges are also added in the README file. See [README.md](https://github.com/niveditalodha/ReadME) |
 | test cases exist|3| We have written test cases for all the models and APIs. Code coverage can be seen here. We achieved 68% coverage. https://app.codecov.io/gh/niveditalodha/ReadME |
-| test cases are routinely executed|3| We run a script in the travis ci pipeline to run the test cases and update the code coverage badge in README.
-https://app.codecov.io/gh/niveditalodha/ReadME |
+| test cases are routinely executed|3| We run a script in the travis ci pipeline to run the test cases and update the code coverage badge in README.https://app.codecov.io/gh/niveditalodha/ReadME |
 | the files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| 3 |https://github.com/niveditalodha/ReadME/blob/main/CONTRIBUTING.md |
 | issues are discussed before they are closed|3|Issues are resolved on the discord channel, weekly zoom meetings or in the comments section of pull requests.|
 | Chat channel: exists| 3| Discord Channel Exists - [Channel Link](https://discord.gg/mZDa5Jfx).|
