@@ -21,7 +21,8 @@ export class MyProfileComponent implements OnInit, AfterViewInit {
   }
   getSentArticles() {
     this.articleService.getDailyArticles(this.commonService.userName).subscribe((response: any) => {
-      this.commonService.sentArticles = JSON.parse(JSON.stringify(response));
+      let resp = JSON.parse(JSON.stringify(response));
+      this.commonService.sentArticles = resp
       this.preferenceInterestList = this.commonService.generateInterestData()
       this.isCarousalVisible = this.preferenceInterestList.length > 0
     })
