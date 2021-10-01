@@ -1,4 +1,4 @@
-<app-navigation-bar></app-navigation-bar>
+<app-navigation-bar [userName]="userName"></app-navigation-bar>
 
 <div>
   <div *ngIf="userProfile.authState | async as socialUser">

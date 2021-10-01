@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
         } else {
           this._returningUser = false;
         }
-        this.router.navigate(['/home'], {queryParams: {returning_user : this._returningUser }})
+        this.router.navigate(['/home'], {queryParams: {returning_user : this._returningUser , username :userdata.email.split('@')[0]}})
       });
     });
   }

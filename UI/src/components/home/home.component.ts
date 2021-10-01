@@ -10,6 +10,13 @@ import {DailyArticleModel} from "../../models/daily-article.model";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  get userName(): string | null {
+    return this._userName;
+  }
+
+  set userName(value: string | null) {
+    this._userName = value;
+  }
   get returningUser(): string | null {
     return this._returningUser;
   }
@@ -32,25 +39,21 @@ export class HomeComponent implements OnInit {
     this._userProfile = value;
   }
   private _userProfile;
+  private _userName!: string | null;
   private _returningUser!: string | null;
   private _userDailyArticles!: DailyArticleModel[];
   constructor(private router: Router,private socialAuthService: SocialAuthService, private dailyArticleService: DailyArticleService,
               private activatedRoute: ActivatedRoute) {
     this._userProfile = socialAuthService;
     this.returningUser = this.activatedRoute.snapshot.queryParamMap.get('returning_user');
-    console.log('returning user :: ', this.returningUser);
-    // this.route.paramMap.subscribe(params => {
-    //
-    //     // @ts-ignore
-    //   this._returningUser = params.get('returning_user');
-    //
-    //   });
+    this.userName = this.activatedRoute.snapshot.queryParamMap.get('username');
+    console.log('returning user :: ', this.returningUser, this.userName);
     console.log('user profile', this._userProfile )
   }
 
 
   getArticles(){
-    this.dailyArticleService.getDailyArticles().subscribe(res => {
+    this.dailyArticleService.getDailyArticles(this._userName).subscribe(res => {
       console.log('res', res);
       this._userDailyArticles = res;
     });

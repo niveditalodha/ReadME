@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BaseService} from "../returning-user/base-service/base.service";
+import {BaseService} from "../base-service/base.service";
 import {DailyArticleModel} from "../../models/daily-article.model";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
@@ -16,12 +16,12 @@ export class DailyArticleService extends BaseService<any>{
     super(http)
   }
 
-  getDailyArticles(): Observable<any>{
+  getDailyArticles(username: string | null): Observable<any>{
 
-    // this.payload = {
-    //   "username":"nnlodha"
-    // };
-    // return this.post('https://readme17se.pythonanywhere.com/get-sent-articles', this.payload);
+    this.payload = {
+      "username": username
+    };
+    return this.post('https://readme17se.pythonanywhere.com/get-sent-articles', this.payload);
 
 
     // return this.post('https://readme17se.pythonanywhere.com/get-random-articles', {});
@@ -70,6 +70,6 @@ export class DailyArticleService extends BaseService<any>{
     // };
     // return this.post('https://readme17se.pythonanywhere.com/get-concept-badges', this.payload);
 
-    return this.get('../../assets/sample-response/sampleResponse1.json');
+    // return this.get('../../assets/sample-response/sampleResponse1.json');
   }
 }
