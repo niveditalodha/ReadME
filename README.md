@@ -1,6 +1,6 @@
 
 
-[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.5539734.svg)](https://zenodo.org/badge/doi/10.5281/zenodo.5539734.svg) [![Build Status](https://api.travis-ci.org/niveditalodha/ReadME.svg?branch=main)](https://app.travis-ci.com/github/niveditalodha/ReadME) [![codecov](https://codecov.io/gh/niveditalodha/ReadME/branch/main/graph/badge.svg?token=b8a4f0af-7f5e-479e-85d0-0901703d4c3f)](https://codecov.io/gh/niveditalodha/ReadME) ![Top Language](https://img.shields.io/github/languages/top/niveditalodha/ReadME) ![Languages](https://img.shields.io/github/languages/count/niveditalodha/ReadME) ![issues](https://img.shields.io/github/issues/niveditalodha/ReadME) ![LinesOfCode](https://img.shields.io/tokei/lines/github/niveditalodha/ReadME) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.5539734.svg)](https://zenodo.org/record/5539790#.YVZISy1h1QJ) [![Build Status](https://api.travis-ci.org/niveditalodha/ReadME.svg?branch=main)](https://app.travis-ci.com/github/niveditalodha/ReadME) [![codecov](https://codecov.io/gh/niveditalodha/ReadME/branch/main/graph/badge.svg?token=b8a4f0af-7f5e-479e-85d0-0901703d4c3f)](https://codecov.io/gh/niveditalodha/ReadME) ![Top Language](https://img.shields.io/github/languages/top/niveditalodha/ReadME) ![Languages](https://img.shields.io/github/languages/count/niveditalodha/ReadME) ![issues](https://img.shields.io/github/issues/niveditalodha/ReadME) ![LinesOfCode](https://img.shields.io/tokei/lines/github/niveditalodha/ReadME) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 
 ---
@@ -73,6 +73,12 @@ All the UI Images
 - Allows users to choose a topic, and articles from that topic are sent to them every day in such a way that each article is related to the one before it. This allows the individual to master that particular area.
 - List of research conferences happening.
 - Expand the number of domains/areas; right now, we're just showing articles from a few, but there's obviously room for more.
+
+---
+
+## Contact Us
+
+Email : [csc510project21@gmail.com](csc510project21@gmail.com)
 
 ---
 

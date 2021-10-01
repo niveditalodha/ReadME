@@ -1,14 +1,18 @@
 | Grading Points| Self Assessment | Evidence|
 |-----|---------|---------|
 |workload is spread over the whole team (one team member is often Xtimes more productive than the others... |
-but nevertheless, here is a track record that everyone is contributing a lot)|2|https://github.com/niveditalodha/ReadME/graphs/contributors
+but nevertheless, here is a track record that everyone is contributing a lot)|3|https://github.com/niveditalodha/ReadME/graphs/contributors
 | Number of commits|3| Total commits : 150 and counting
-| Number of commits: by different people|2|Maximum : 52, Minimum: 6 https://github.com/niveditalodha/ReadME/graphs/contributors
-| Issues reports: there are **many**| 3 | Total issues opened 41 https://github.com/niveditalodha/ReadME/issues|
-| issues are being  closed| 3| Total issues closed 33 https://github.com/niveditalodha/ReadME/issues
-| DOI badge: exists | 3 | https://zenodo.org/record/
+| Number of commits: by different people|3|Maximum : 55, Minimum: 6 https://github.com/niveditalodha/ReadME/graphs/contributors
+| Issues reports: there are **many**| 2 | Total issues opened 10 Badges are added in the README file.
+See [README.md](https://github.com/niveditalodha/ReadME/blob/main/README.md)
+See [Issues](https://github.com/niveditalodha/ReadME/issues) |
+| issues are being  closed| 2| Total issues closed 6 https://github.com/niveditalodha/ReadME/issues
+| DOI badge: exists | 3 | GitHub README.md
+https://zenodo.org/record/5539790#.YVYlay1h1QJ
+
 |Docs: doco generated , format not ugly |in GH|
-|Docs: what: point descriptions of each class/function (in isolation) | 3 | Definition of the function are written in each . |
+|Docs: what: point descriptions of each class/function (in isolation) | 3 |  |
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|doc page entries| Please find the use cases and mini tutorials for the same at the given link : 
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|
