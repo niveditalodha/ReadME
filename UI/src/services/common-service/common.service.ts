@@ -108,7 +108,6 @@ export class CommonService {
   getAllPreferences() {
     this.userPreferenceService.getPreferenceList(this.userName).subscribe((response: any) => {
       this.preference = JSON.parse(JSON.stringify(response))
-      debugger
     })
   }
 }

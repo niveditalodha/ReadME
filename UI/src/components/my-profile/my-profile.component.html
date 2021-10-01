@@ -10,7 +10,7 @@
         </div>
 
     </div>
-    <div class="card-carousal">
-        <app-recommendation-carousel></app-recommendation-carousel>
+    <div class="card-carousal" *ngIf="">
+        <app-recommendation-carousel [randomArticlesList]="preferenceInterestList.articleList"></app-recommendation-carousel>
     </div>
 </div>
