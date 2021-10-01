@@ -16,4 +16,8 @@ export class ConferenceService extends BaseService<ConferenceModel[]>{
   getUserConferences(): Observable<ConferenceModel[]>{
     return this.get('../../assets/sample-response/user-conferences.json')
   }
+
+  getUpcomingUserConferences(): Observable<ConferenceModel[]>{
+    return this.get('../../assets/sample-response/upcoming-user-conferences.json')
+  }
 }

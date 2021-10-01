@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((userdata) => {
       this.returningUserService.checkReturningUser(userdata.name,userdata.email).subscribe(response => {
-        console.log('returning user response', response, response == 'existing');
+        // console.log('returning user response', response, response == 'existing');
         if(response == 'existing'){
           this._returningUser = true;
         } else {

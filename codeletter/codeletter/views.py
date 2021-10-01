@@ -159,7 +159,7 @@ class UpdateReadFlag(APIView):
                         elif count[j] > 11:
                             obj.user_badge = 'Expert'
                             obj.save()
-                        json_data.append({"user_id": user_id, "concept_id":j,"user_badge":obj.user_badge})
+                        json_data.append({"username": username, "concept_id":j,"user_badge":obj.user_badge})
         return Response(json_data)
 
 """

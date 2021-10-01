@@ -12,28 +12,29 @@ export class CommonService {
   badge: any
   interestData: any
   userName!: string | null;
+
   constructor(private http: HttpClient, private userPreferenceService: UserPreferenceService) {
     this.preference = [
-      { "concept_id": 1, "checked": true, "concept_name": "Artificial Intelligence" },
-      { "concept_id": 2, "checked": true, "concept_name": "Graph Mining" },
-      { "concept_id": 3, "checked": true, "concept_name": "Algorithms" },
-      { "concept_id": 4, "checked": false, "concept_name": "Object Oriented Programming" },
-      { "concept_id": 5, "checked": true, "concept_name": "Data Structures" },
-      { "concept_id": 11, "checked": false, "concept_name": "Artificial Intelligence" },
-      { "concept_id": 12, "checked": false, "concept_name": "Graph Mining" },
-      { "concept_id": 13, "checked": false, "concept_name": "Algorithms" },
-      { "concept_id": 14, "checked": false, "concept_name": "Object Oriented Programming" },
-      { "concept_id": 15, "checked": false, "concept_name": "Data Structures" },
-      { "concept_id": 21, "checked": false, "concept_name": "Artificial Intelligence" },
-      { "concept_id": 22, "checked": false, "concept_name": "Graph Mining" },
-      { "concept_id": 23, "checked": false, "concept_name": "Algorithms" },
-      { "concept_id": 24, "checked": false, "concept_name": "Object Oriented Programming" },
-      { "concept_id": 25, "checked": false, "concept_name": "Data Structures" },
-      { "concept_id": 31, "checked": false, "concept_name": "Artificial Intelligence" },
-      { "concept_id": 32, "checked": false, "concept_name": "Graph Mining" },
-      { "concept_id": 33, "checked": false, "concept_name": "Algorithms" },
-      { "concept_id": 34, "checked": false, "concept_name": "Object Oriented Programming" },
-      { "concept_id": 35, "checked": false, "concept_name": "Data Structures" }
+      {"concept_id": 1, "checked": true, "concept_name": "Artificial Intelligence"},
+      {"concept_id": 2, "checked": true, "concept_name": "Graph Mining"},
+      {"concept_id": 3, "checked": true, "concept_name": "Algorithms"},
+      {"concept_id": 4, "checked": false, "concept_name": "Object Oriented Programming"},
+      {"concept_id": 5, "checked": true, "concept_name": "Data Structures"},
+      {"concept_id": 11, "checked": false, "concept_name": "Artificial Intelligence"},
+      {"concept_id": 12, "checked": false, "concept_name": "Graph Mining"},
+      {"concept_id": 13, "checked": false, "concept_name": "Algorithms"},
+      {"concept_id": 14, "checked": false, "concept_name": "Object Oriented Programming"},
+      {"concept_id": 15, "checked": false, "concept_name": "Data Structures"},
+      {"concept_id": 21, "checked": false, "concept_name": "Artificial Intelligence"},
+      {"concept_id": 22, "checked": false, "concept_name": "Graph Mining"},
+      {"concept_id": 23, "checked": false, "concept_name": "Algorithms"},
+      {"concept_id": 24, "checked": false, "concept_name": "Object Oriented Programming"},
+      {"concept_id": 25, "checked": false, "concept_name": "Data Structures"},
+      {"concept_id": 31, "checked": false, "concept_name": "Artificial Intelligence"},
+      {"concept_id": 32, "checked": false, "concept_name": "Graph Mining"},
+      {"concept_id": 33, "checked": false, "concept_name": "Algorithms"},
+      {"concept_id": 34, "checked": false, "concept_name": "Object Oriented Programming"},
+      {"concept_id": 35, "checked": false, "concept_name": "Data Structures"}
     ]
     this.preferenceList = this.preference.filter((x: any) => x.checked == true)
     this.sentArticles = [
@@ -80,6 +81,7 @@ export class CommonService {
     ]
     this.interestData = this.generateInterestData();
   }
+
   generateInterestData() {
     let data: any = [];
     this.preferenceList.forEach((element: any) => {

@@ -20,7 +20,7 @@ export class DailyArticleComponent implements OnInit {
 
   ngOnInit() {
     // console.log('article', this.articleData);
-    console.log('article abstract', this.articleData.abstract);
+    // console.log('article abstract', this.articleData.abstract);
   }
 
   goToLink(url: string){

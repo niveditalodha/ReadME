@@ -48,7 +48,7 @@ Below are the techonologies that we have used to build the application.
 	```
 	python manage.py migrate
 	```
-4. Create the login credentials when prompted and don't forget to save this, because the same credentials are used to login to the admin console 
+4. Create the login credentials when prompted and don't forget to save this, because the same credentials are used to login to the admin console
 	```
 	python manage.py createsuperuser
 	```
@@ -58,7 +58,10 @@ Below are the techonologies that we have used to build the application.
 ## Execution Steps 
 
 1. Run `python3 manage.py runserver` from the folder `/codeletter`. 
-2. Next, open the browser and enter, [https://localhost:4200/](https://localhost:4200/) to open the Web UI of the application.
+2. Next, open the browser and enter, https://localhost:{port_number}}/ to make post requests to APIs.
+3. At the admin/ page, you can add dummy data in the models and make POST requests to test the APIs. 
+4. The APIs are available at https://readme17se.pythonanywhere.com/ and their brief documentation is available at [https://docs.google.com/spreadsheets/d/1H-hvEmOf9RNG6zr111A7DrE30HSd6UZr67vFTpskBXE/edit?usp=sharing](here).
+5. The concepts and articles are scraped from towardsdatascience.com and the scraper function get_scraped_content(year) is available in the file codeletter/utils.py.
 
 ---
 
