@@ -16,7 +16,7 @@ export class AccordianComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('conference details', this.conferenceDetails)
+    // console.log('conference details', this.conferenceDetails)
   }
 
 }

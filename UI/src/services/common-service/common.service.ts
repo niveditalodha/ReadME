@@ -103,9 +103,9 @@ export class CommonService {
     let url = "https://readme17se.pythonanywhere.com/get-random-articles"
     // let url = "https://readme17se.pythonanywhere.com/api/get-random-articles"
     this.http.get(url, {headers:headers}).subscribe((data)=>{
-      console.log(JSON.stringify(data))
+      // console.log(JSON.stringify(data))
     })
-    
+
   }
 
 }

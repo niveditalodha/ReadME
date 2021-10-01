@@ -4,6 +4,8 @@ export interface ConferenceModel{
   conference_date: string;
   registration_fee: string;
   location: string;
-  virual: boolean;
+  link: string;
+  virtual: boolean;
   on_site: boolean;
+  hybrid: boolean;
 }

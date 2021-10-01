@@ -20,7 +20,7 @@ export class RecommendationCarouselComponent implements AfterContentChecked {
   }
 
   ngAfterContentChecked(): void {
-    console.log('random article list', this.randomArticlesList);
+    // console.log('random article list', this.randomArticlesList);
   }
 
 }

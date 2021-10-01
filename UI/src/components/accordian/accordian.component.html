@@ -7,47 +7,47 @@
     </ngb-panel>
   </ng-template>
 
-  <ngb-panel>
+  <ngb-panel *ngFor="let conference of conferenceDetails">
     <ng-template ngbPanelTitle>
-      <span><b>Fancy</b> title</span>
+      <span><b>{{conference.conference_title}}</b></span>
     </ng-template>
     <ng-template ngbPanelContent>
       <div class="card">
         <div class="card-body">
           <div>
             <div class="row">
-              <div class="col-sm-10">
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <div class="col-sm-9">
+                <h6 class="card-subtitle mb-2 text-muted">Location: {{conference.location}}</h6>
               </div>
-              <div class="col-sm-2">
-                <h6 class="card-subtitle mb-2 text-muted">Date: 01/03/2021</h6>
+              <div class="col-sm-3">
+                <h6 class="card-subtitle mb-2 text-muted">Date: {{conference.conference_date}}</h6>
               </div>
             </div>
           </div>
           <div>
-            dfvmwkejnvwoeflmvwdofvnoevmqpeofkmvoejfnvopevmqdlf
+            {{conference.conference_description}}
           </div>
           <div style="padding-top:2%; display: inline-block">
             <div style=" display: inline-flex; width: -webkit-fill-available;">
               <div *ngIf="userConference">
-                <a class="card-link" href="#">Registration Link</a>
+                <a class="card-link" [href]="conference.link">Registration Link</a>
               </div>
               <div  *ngIf="!userConference">
                 <a class="card-link" href="#" disabled="">Add to Calendar (Upcoming feature)</a>
               </div>
               <div style="padding-left: 5%;">
-                <span>Fee: $100</span>
+                <span>Fee: ${{conference.registration_fee}}</span>
               </div>
             </div>
             <div style="padding-top:2%; display: inline-flex">
               <div>
-                <span class="badge bg-danger">Virtual</span>
+                <span *ngIf="conference.virtual" class="badge bg-danger">Virtual</span>
               </div>
               <div style="padding-left: 5%;">
-                <span class="badge bg-info">Onsite</span>
+                <span  *ngIf="conference.on_site" class="badge bg-info">Onsite</span>
               </div>
               <div style="padding-left: 5%;">
-                <span class="badge bg-warning">Hybrid</span>
+                <span *ngIf="conference.hybrid" class="badge bg-warning">Hybrid</span>
               </div>
             </div>
           </div>

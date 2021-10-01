@@ -65,14 +65,14 @@ export class HomeComponent implements OnInit {
     this._userProfile = socialAuthService;
     this.returningUser = this.activatedRoute.snapshot.queryParamMap.get('returning_user');
     this.userName = this.activatedRoute.snapshot.queryParamMap.get('username');
-    console.log('returning user :: ', this.returningUser, this.userName);
-    console.log('user profile', this._userProfile )
+    // console.log('returning user :: ', this.returningUser, this.userName);
+    // console.log('user profile', this._userProfile )
   }
 
 
   getArticles(){
     this.dailyArticleService.getDailyArticles(this._userName).subscribe(res => {
-      console.log('res', res);
+      // console.log('res', res);
       this._userDailyArticles = res;
       this._articlesLength = this.userDailyArticles.length
     });
@@ -85,7 +85,7 @@ export class HomeComponent implements OnInit {
 
   getRandomArticles(){
     this.randomArticleService.getRandomArticles().subscribe(response => {
-      console.log('random artice', response);
+      // console.log('random artice', response);
       this._randomArticles = response;
     })
   }
