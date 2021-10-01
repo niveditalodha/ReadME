@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'codeletter',
+    'rest_framework',
     #'corsheaders',
     'django_nose'
 ]
