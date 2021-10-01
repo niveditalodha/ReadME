@@ -14,7 +14,6 @@ import { CommonService } from 'src/services/common-service/common.service';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
-
   @Input() userName!: string | null;
 
 
@@ -46,7 +45,7 @@ export class NavigationBarComponent implements OnInit {
   }
 
   routeToLink(link: string) {
-    this.router.navigate(['/' + link])
+    this.router.navigate(['/' + link], {queryParams: {username: this.userName}})
   }
 
 }
