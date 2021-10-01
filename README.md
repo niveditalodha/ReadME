@@ -93,9 +93,9 @@ Email : [csc510project21@gmail.com](csc510project21@gmail.com)
 ## Team Members
 
 - Nivedita Lodha
-- Uma
+- Uma Gnanasundaram
 - Sai Naga Vamshi Chidara
-- Neha
+- Neha Kotcherlakota
 - Akhil Kumar Mengani
 				
 
