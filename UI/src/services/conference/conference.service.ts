@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BaseService} from "../base-service/base.service";
+import {BaseService} from "../returning-user/base-service/base.service";
 import {ConferenceModel} from "../../models/conference.model";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
