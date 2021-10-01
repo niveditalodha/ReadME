@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BaseService } from './base.service';
+import { RandomArticleService } from './random-article.service';
 
-describe('BaseService', () => {
-  let service: BaseService;
+describe('RandomArticleService', () => {
+  let service: RandomArticleService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(BaseService);
+    service = TestBed.inject(RandomArticleService);
   });
 
   it('should be created', () => {

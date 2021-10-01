@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import {Component, Input, OnInit, TemplateRef} from '@angular/core';
 import { NgbCarouselConfig, NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from "@angular/router";
 import { SocialAuthService } from "angularx-social-login";
@@ -13,6 +13,8 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
+
+  @Input() userName!: string | null;
 
 
   constructor(private router: Router, config: NgbPopoverConfig, private socialAuthService: SocialAuthService,

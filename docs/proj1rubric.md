@@ -1,19 +1,14 @@
 | Grading Points| Self Assessment | Evidence|
 |-----|---------|---------|
-|workload is spread over the whole team (one team member is often Xtimes more productive than the others... |
-but nevertheless, here is a track record that everyone is contributing a lot)|3|https://github.com/niveditalodha/ReadME/graphs/contributors
+|workload is spread over the whole team (one team member is often Xtimes more productive than the others...but nevertheless, here is a track record that everyone is contributing a lot)|3| Work is shared equally by all the members of the team. Contributions in Github.https://github.com/niveditalodha/ReadME/graphs/contributors
 | Number of commits|3| Total commits : 150 and counting
 | Number of commits: by different people|3|Maximum : 55, Minimum: 6 https://github.com/niveditalodha/ReadME/graphs/contributors
-| Issues reports: there are **many**| 2 | Total issues opened 10 Badges are added in the README file.
-See [README.md](https://github.com/niveditalodha/ReadME/blob/main/README.md)
-See [Issues](https://github.com/niveditalodha/ReadME/issues) |
+| Issues reports: there are **many**| 2 | Total issues opened 10 Badges are added in the README file. See [README.md](https://github.com/niveditalodha/ReadME/blob/main/README.md) See [Issues](https://github.com/niveditalodha/ReadME/issues) |
 | issues are being  closed| 2| Total issues closed 6 https://github.com/niveditalodha/ReadME/issues
-| DOI badge: exists | 3 | GitHub README.md
-https://zenodo.org/record/5539790#.YVYlay1h1QJ
-
-|Docs: doco generated , format not ugly |in GH|
-|Docs: what: point descriptions of each class/function (in isolation) | 3 |  |
-|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|doc page entries| Please find the use cases and mini tutorials for the same at the given link : 
+| DOI badge: exists | 3 | GitHub README.md https://zenodo.org/record/5539790#.YVYlay1h1QJ |
+|Docs: doco generated , format not ugly |2| Documentation is generated using sphinx |
+|Docs: what: point descriptions of each class/function (in isolation) | 2 | Every method in a file has the definition, parameters, types and return types. |
+|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|3| Please see the use cases here, https://docs.google.com/document/d/1RJIEvoCBdZO_TtiTOEpdSlNscebum9NKvma1O3Pd8Ro/edit?usp=sharing |
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|
 | Use of version control tools| 3| Use of git and github. Use of branches, and commits. https://github.com/niveditalodha/ReadME

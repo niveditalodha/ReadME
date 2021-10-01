@@ -6,6 +6,7 @@ install:
   - pip3 install coverage
   - pip3 install django-nose
   - pip install pytest-django
+  - pip install djangorestframework
 # - pip3 install pylint
 # - pip3 install pytest
 script:
