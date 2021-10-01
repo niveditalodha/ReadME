@@ -7,7 +7,7 @@
 
 # ReadME
 
-![Readme](https://drive.google.com/file/d/1BfaCxM9MGa3o7bca3jIuSxkKSBdmn3hR/view?usp=sharing)
+<img src = "https://drive.google.com/file/d/1BfaCxM9MGa3o7bca3jIuSxkKSBdmn3hR/view?usp=sharing"/>
 
 ReadMe is a web application that gathers articles from the internet and recommends them to users depending on their likes.
 - User can connect to the applications and select choices such as Machine Learning, Programming, Data Science, and Dev Ops etc. So that only the articles from those areas are shown to the user.
