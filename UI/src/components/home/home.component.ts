@@ -65,7 +65,9 @@ export class HomeComponent implements OnInit {
               private activatedRoute: ActivatedRoute, private randomArticleService: RandomArticleService, private commonService: CommonService) {
     this._userProfile = socialAuthService;
     this.returningUser = this.activatedRoute.snapshot.queryParamMap.get('returning_user');
-    this.userName = this.activatedRoute.snapshot.queryParamMap.get('username');
+    // this.userName = this.activatedRoute.snapshot.queryParamMap.get('username');
+
+    this.userName = this.commonService.getUserName()
     // console.log('returning user :: ', this.returningUser, this.userName);
     // console.log('user profile', this._userProfile )
 
@@ -84,7 +86,7 @@ export class HomeComponent implements OnInit {
     this.getArticles();
     this.getRandomArticles();
     this.commonService.setUserName(this._userName);
-    this.commonService.getAllPreferences();
+    this.commonService.getAllPreferences(this.commonService.getUserName());
   }
 
   getRandomArticles(){

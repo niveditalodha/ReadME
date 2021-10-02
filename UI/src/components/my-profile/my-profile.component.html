@@ -1,19 +1,26 @@
 <app-navigation-bar></app-navigation-bar>
+<ng-template *ngIf="preferenceLength > 0; else displayNoPreference">
+    <div *ngFor="let preference of preferenceInterestList">
+        <div class="d-flex" class="preference-list">
+            <div class="mr-auto p-2">
+                <h4>{{preference.concept_name}}</h4>
+            </div>
+            <div class="p-2" style="margin-top: 8px;">
+                <h6>Level: &nbsp; {{preference.badge}} </h6>
+            </div>
 
-<div *ngFor="let preference of preferenceInterestList">
-    <div class="d-flex" class="preference-list">
-        <div class="mr-auto p-2">
-            <h4>{{preference.concept_name}}</h4>
         </div>
-        <div class="p-2" style="margin-top: 8px;">
-            <h6>Level: &nbsp; {{preference.badge}} </h6>
+        <div class="card-carousal" *ngIf="preferenceLength > 0; else displayPrefList">
+            <app-recommendation-carousel [randomArticlesList]="preferenceInterestList.articleList">
+            </app-recommendation-carousel>
         </div>
-
+        <ng-template #displayPrefList>
+            <h6 style="padding-left: 1.5%; padding-bottom: 1%"> There are no articles currently. You will be receiving
+                articles on this topic soon!</h6>
+        </ng-template>
     </div>
-    <div class="card-carousal" *ngIf="preferenceLength > 0; else displayPrefList">
-        <app-recommendation-carousel [randomArticlesList]="preferenceInterestList.articleList"></app-recommendation-carousel>
-    </div>
-    <ng-template #displayPrefList>
-        <h6 style="padding-left: 1.5%; padding-bottom: 1%"> There are no articles currently. You will be receiving articles on this topic soon!</h6>
-    </ng-template>
-</div>
+</ng-template>
+<ng-template #displayNoPreference>
+    <h4 style="padding: 2% 2% 2% 2%"> No article preference selected currently. You will be receiving
+        articles on this topic soon as you select Preference!</h4>
+</ng-template>

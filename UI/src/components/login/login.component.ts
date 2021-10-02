@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
         } else {
           this._returningUser = false;
         }
+        sessionStorage.setItem('userName',userdata.email.split('@')[0])
         this.router.navigate(['/home'], {queryParams: {returning_user : this._returningUser , username :userdata.email.split('@')[0]}})
       });
     });

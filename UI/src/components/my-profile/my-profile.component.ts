@@ -13,12 +13,13 @@ import { BadgeService } from 'src/services/badge-service/badge.service';
 export class MyProfileComponent implements OnInit {
   preferenceInterestList: any
   preferenceLength!: number;
+  
   user_name!: string | null;
   constructor(private commonService: CommonService, private articleService: DailyArticleService,
               private activatedRoute: ActivatedRoute, private badgeService: BadgeService) { }
 
   ngOnInit(): void {
-    this.user_name = this.activatedRoute.snapshot.queryParamMap.get('username');
+    this.user_name = this.commonService.getUserName();
     this.getSentArticles();
   }
 
@@ -26,9 +27,9 @@ export class MyProfileComponent implements OnInit {
     this.articleService.getDailyArticles(this.user_name).subscribe((response: any) => {
       let resp = JSON.parse(JSON.stringify(response));
       this.commonService.sentArticles = resp
-      this.preferenceInterestList = this.commonService.generateInterestData();
+      // this.preferenceInterestList = this.commonService.generateInterestData();
       this.preferenceLength = resp.length;
-      this.badgeService.getBadgeDetails(this.commonService.userName).subscribe((badgeResponse: any) => {
+      this.badgeService.getBadgeDetails(this.user_name).subscribe((badgeResponse: any) => {
         this.commonService.badge = JSON.parse(JSON.stringify(badgeResponse))
         this.preferenceInterestList = this.commonService.generateInterestData()
       })

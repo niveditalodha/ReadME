@@ -17,12 +17,13 @@ export class UserPreferenceComponent implements OnInit {
   constructor(private commonService: CommonService, private userPreferenceService: UserPreferenceService) { }
 
   ngOnInit(): void {
-    this.userName = this.commonService.userName
-    console.log("username", this.userName)
+    this.userName = this.commonService.getUserName()
+    // console.log("username", this.userName)
     this.preference = JSON.parse(JSON.stringify(this.commonService.preference));
-    this.preferenceInterestList = JSON.parse(JSON.stringify(this.commonService.interestData))   
+    // this.preferenceInterestList = JSON.parse(JSON.stringify(this.commonService.interestData))   
   }
   updatePreference() {
+    
     this.commonService.preference = JSON.parse(JSON.stringify (this.preference))
     this.modalRef?.hide()
 
