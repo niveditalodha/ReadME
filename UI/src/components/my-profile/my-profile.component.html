@@ -1,5 +1,6 @@
 <app-navigation-bar></app-navigation-bar>
-<ng-template *ngIf="preferenceLength > 0; else displayNoPreference">
+
+<div *ngIf="preferenceLength > 0; else displayNoPreference">
     <div *ngFor="let preference of preferenceInterestList">
         <div class="d-flex" class="preference-list">
             <div class="mr-auto p-2">
@@ -11,7 +12,7 @@
 
         </div>
         <div class="card-carousal" *ngIf="preferenceLength > 0; else displayPrefList">
-            <app-recommendation-carousel [randomArticlesList]="preferenceInterestList.articleList">
+            <app-recommendation-carousel [randomArticlesList]="preference.articleList">
             </app-recommendation-carousel>
         </div>
         <ng-template #displayPrefList>
@@ -19,7 +20,7 @@
                 articles on this topic soon!</h6>
         </ng-template>
     </div>
-</ng-template>
+</div>
 <ng-template #displayNoPreference>
     <h4 style="padding: 2% 2% 2% 2%"> No article preference selected currently. You will be receiving
         articles on this topic soon as you select Preference!</h4>

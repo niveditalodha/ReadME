@@ -3,14 +3,14 @@
     <ngb-carousel>
       <ng-template *ngFor="let article of randomArticlesList; let i = index" ngbSlide>
         <div style="display: inline-flex">
-          <div class="left-div" >
-            <app-daily-article [articleData]="randomArticlesList[i]"></app-daily-article>
+          <div class="left-div" *ngIf = "randomArticlesList[i]">
+            <app-daily-article (articleRead)="articleReadStat($event)" [articleData]="randomArticlesList[i]"></app-daily-article>
           </div>
-          <div class="right-div">
-            <app-daily-article [articleData]="randomArticlesList[i+1]"></app-daily-article>
+          <div class="right-div" *ngIf = "randomArticlesList[i+1]">
+            <app-daily-article (articleRead)="articleReadStat($event)" [articleData]="randomArticlesList[i+1]"></app-daily-article>
           </div>
-          <div class="desktop-card">
-            <app-daily-article [articleData]="randomArticlesList[i+2]"></app-daily-article>
+          <div class="desktop-card" *ngIf = "randomArticlesList[i+2]">
+            <app-daily-article (articleRead)="articleReadStat($event)" [articleData]="randomArticlesList[i+2]"></app-daily-article>
           </div>
         </div>
       </ng-template>

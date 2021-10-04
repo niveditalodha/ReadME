@@ -95,6 +95,10 @@ export class HomeComponent implements OnInit {
       this._randomArticles = response;
     })
   }
-
+  articleReadStat(articleId: any) {
+    this.dailyArticleService.updateReadArticleStat(this.userName,articleId).subscribe((response: any) => {
+      console.log("article Read status updated")
+    })
+  }
 
 }

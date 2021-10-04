@@ -16,5 +16,5 @@
 </ng-template>
 <div>
   <h2 style="padding-left: 2%; padding-bottom: 2%">Recommended Articles</h2>
-  <app-recommendation-carousel [randomArticlesList]="randomArticles"></app-recommendation-carousel>
+  <app-recommendation-carousel (articleRead)="articleReadStat($event)" [randomArticlesList]="randomArticles"></app-recommendation-carousel>
 </div>

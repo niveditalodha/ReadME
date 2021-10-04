@@ -20,4 +20,19 @@ export class UserPreferenceService extends BaseService<any> {
 
 
   }
+  updatePreference(userName: string | null, preference: any) {
+    let selectedPreference = preference.filter((x: any) => { return x.checked }).map((item :any) => {
+      let container: any = {};
+  
+      container["concept_id"] = String(item.concept_id);
+      container["concept_name"] = item.concept_name;
+  
+      return container;
+  })
+    this.payload = {
+      username: userName,
+      preferences: selectedPreference
+    }
+    return this.post('https://readme17se.pythonanywhere.com/update-preferences', this.payload);
+  }
 }

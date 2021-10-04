@@ -6,4 +6,5 @@ export interface RandomArticleModel{
   url: string;
   domain: string;
   doi?: any;
+  send_article_id?: any;
 }

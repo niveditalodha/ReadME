@@ -23,7 +23,9 @@ export class UserPreferenceComponent implements OnInit {
     // this.preferenceInterestList = JSON.parse(JSON.stringify(this.commonService.interestData))   
   }
   updatePreference() {
-    
+    this.userPreferenceService.updatePreference(this.userName, this.preference).subscribe((resp: any) => {
+
+    })
     this.commonService.preference = JSON.parse(JSON.stringify (this.preference))
     this.modalRef?.hide()
 

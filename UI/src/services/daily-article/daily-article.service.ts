@@ -72,4 +72,11 @@ export class DailyArticleService extends BaseService<any>{
 
     // return this.get('../../assets/sample-response/sampleResponse1.json');
   }
+  updateReadArticleStat(username: string|null, articleId: any) {
+    this.payload = {
+      "username": username,
+      "sent_article_id": articleId
+    }
+    return this.post('https://readme17se.pythonanywhere.com/update-read-flag', this.payload);
+  }
 }

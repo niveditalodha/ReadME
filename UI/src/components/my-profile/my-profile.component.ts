@@ -13,13 +13,14 @@ import { BadgeService } from 'src/services/badge-service/badge.service';
 export class MyProfileComponent implements OnInit {
   preferenceInterestList: any
   preferenceLength!: number;
-  
+
   user_name!: string | null;
   constructor(private commonService: CommonService, private articleService: DailyArticleService,
-              private activatedRoute: ActivatedRoute, private badgeService: BadgeService) { }
+    private activatedRoute: ActivatedRoute, private badgeService: BadgeService) { }
 
   ngOnInit(): void {
     this.user_name = this.commonService.getUserName();
+    this.commonService.getAllPreferences(this.user_name);
     this.getSentArticles();
   }
 

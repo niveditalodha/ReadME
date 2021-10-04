@@ -1,4 +1,4 @@
-import {AfterContentChecked, AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {AfterContentChecked, AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {NgbCarouselConfig} from "@ng-bootstrap/ng-bootstrap";
 import {RandomArticleModel} from "../../models/random-article.model";
 
@@ -10,6 +10,7 @@ import {RandomArticleModel} from "../../models/random-article.model";
 export class RecommendationCarouselComponent implements AfterContentChecked {
 
   @Input() randomArticlesList!: RandomArticleModel[];
+  @Output() articleRead: EventEmitter<any> = new EventEmitter<any>()
 
   constructor(config: NgbCarouselConfig) {
     config.interval = 20000000;
@@ -21,6 +22,9 @@ export class RecommendationCarouselComponent implements AfterContentChecked {
 
   ngAfterContentChecked(): void {
     // console.log('random article list', this.randomArticlesList);
+  }
+  articleReadStat(articleId: any) {
+    this.articleRead.emit(articleId);
   }
 
 }
