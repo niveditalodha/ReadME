@@ -16,8 +16,12 @@ ReadMe is a web application that gathers articles from the internet and recommen
 - As a mark of thanks, enthusiastic readers are granted a User Badge.
 
 ---
+## App Link
 
-## Techonologies Used:
+https://readme-app.herokuapp.com/login
+
+---
+## Techonologies Used
 
 Below are the techonologies that we have used to build the application.
 - Python3
@@ -58,7 +62,7 @@ Below are the techonologies that we have used to build the application.
 
 ---
 
-## Execution Steps 
+## Back-End Execution Steps 
 
 1. Run `python3 manage.py runserver` from the folder `/codeletter`. 
 2. Next, open the browser and enter, https://localhost:{port_number}}/ to make post requests to APIs.
@@ -71,8 +75,50 @@ Below are the techonologies that we have used to build the application.
 
 ## Web UI
 
-All the UI Images
+1. Login - The User can login using google account.
 
+<img src="UI/images/loginPage.png" height="400" width="650"/> 
+
+2. Home - The article of the day and list of recommended articles will be available in this page.
+
+<img src="UI/images/homePage.png" height="400" width="650"/> 
+
+3. On click of user icon, the options to update article subject preference and log out will be displayed.
+
+<img src="UI/images/profilePopup.png" height="400" width="650"/>
+
+4. On click of preference, update preference pop-up will be displayed.
+
+<img src="UI/images/UpdatePreference.PNG" height="400" width="650"/>
+
+5. My Profile - The articles sent to the user till date will be categorized under the selected preferences.
+
+<img src="UI/images/MyProfilePageData.PNG" height="350" width="650"/>
+
+6. Conference Page - Upcoming Conference with the link to registeration will be available.
+
+<img src="UI/images/upcomingConferences.png" height="350" width="650"/>
+
+7. Conference Page - Your Conferences - The registered conferences are listed under your conferences with add to calendar option.
+
+<img src="UI/images/conferencePage.png" height="350" width="650"/>
+
+---
+
+## Front-End Execution Steps
+
+1. Clone the project. Code for the front-end is available in ReadME/UI.
+2. Setup [Node](https://nodejs.org/en/download/) and [Angular CLI](https://angular.io/cli) in your desktop. 
+3. Open the command prompt and navigate to the UI Directory.
+4. Install the node packages using the command
+	```
+	npm install
+	```
+5. Serve the angular application in your local environment using the command 
+	```
+	ng serve --o
+	```
+6. The application will be served in the url http://localhost:4200 of your default browser.
 ---
 
 ## FUTURE SCOPE
